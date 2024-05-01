@@ -144,6 +144,7 @@
     i3
     qv2ray
     telegram-desktop
+    btop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
