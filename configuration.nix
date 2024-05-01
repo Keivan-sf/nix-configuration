@@ -83,14 +83,14 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      i3
-      qv2ray
     #  thunderbird
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  # flakes
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -100,6 +100,8 @@
     git
     lazygit
     google-chrome
+    i3
+    qv2ray
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
