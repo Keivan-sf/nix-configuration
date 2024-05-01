@@ -102,6 +102,7 @@
     google-chrome
     i3
     qv2ray
+    telegram-desktop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
