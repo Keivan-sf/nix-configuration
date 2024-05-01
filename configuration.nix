@@ -34,14 +34,19 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+ # services.xserver.displayManager.gdm.enable = true;
+ # services.xserver.desktopManager.gnome.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.windowManager.i3.enable = true; # Configure keymap in X11
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
+  services.xserver.layout = "us";
+  services.xserver.xkbVariant = "";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -73,6 +78,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
+      i3
     #  thunderbird
     ];
   };
