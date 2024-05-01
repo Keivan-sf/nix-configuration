@@ -84,6 +84,7 @@
     packages = with pkgs; [
       firefox
       i3
+      qv2ray
     #  thunderbird
     ];
   };
