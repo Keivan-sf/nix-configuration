@@ -160,6 +160,7 @@
     neovide
     rustup
     libgcc
+    gcc9
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
