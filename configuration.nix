@@ -162,6 +162,7 @@
     rustup
     libgcc
     gcc9
+    mpv
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
