@@ -147,6 +147,7 @@
     telegram-desktop
     btop
     libnotify
+    gscreenshot
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
