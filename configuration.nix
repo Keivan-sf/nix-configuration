@@ -163,6 +163,7 @@
     libgcc
     gcc9
     mpv
+    gnome.gnome-disk-utility
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
