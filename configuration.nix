@@ -164,6 +164,7 @@
     gcc9
     mpv
     gnome.gnome-disk-utility
+    spotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
