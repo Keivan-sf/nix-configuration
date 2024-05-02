@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -25,7 +26,7 @@
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
 
@@ -52,7 +53,7 @@
     open = false;
 
     # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
+    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
@@ -80,8 +81,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
- # services.xserver.displayManager.gdm.enable = true;
- # services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
@@ -125,17 +126,17 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode"];})
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
   # List packages installed in system profile. To search, run:
@@ -182,7 +183,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   # networkd dns
-  networking.nameservers = ["178.22.122.100"  "185.51.200.2"];
+  networking.nameservers = [ "178.22.122.100" "185.51.200.2" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
