@@ -165,6 +165,7 @@
     mpv
     gnome.gnome-disk-utility
     spotify
+    xfce.xfce4-pulseaudio-plugin
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
