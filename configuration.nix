@@ -121,6 +121,7 @@
     gnome.gnome-disk-utility
    # spotify
     xfce.xfce4-pulseaudio-plugin
+    gscreenshot
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
