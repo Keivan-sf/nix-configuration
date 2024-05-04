@@ -124,6 +124,8 @@
     xfce.xfce4-pulseaudio-plugin
     gscreenshot
     xclip
+    wordnet
+    piper-tts
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
