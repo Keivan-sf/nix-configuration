@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
     ];
   # home 
+  home-manager.backupFileExtension = "backup";
   home-manager.users.keive = {
 	imports = [./home.nix];
   };
