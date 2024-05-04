@@ -123,6 +123,7 @@
     # spotify
     xfce.xfce4-pulseaudio-plugin
     gscreenshot
+    xclip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
