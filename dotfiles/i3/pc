@@ -194,7 +194,8 @@ bar {
 
 
 # Path to volume control, without trailing slash
-set $volumepath ~/i3-volume
+#set $volumepath /etc/nixos/dotfiles/i3/i3-volume
+set $volumepath . 
 
 # Command for the status line
 #   ie: i3blocks, i3status
@@ -217,6 +218,6 @@ set $volumestep 5
 set $sinkname alsa_output.pci-0000_00_1b.0.analog-stereo
 
 # Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
-bindsym F6 exec --no-startup-id sh ./i3-volume.sh -n -t $statuscmd -u $statussig up $volumestep
-bindsym F5 exec --no-startup-id sh ./i3-volume.sh -n -t $statuscmd -u $statussig down $volumestep
-bindsym F4 exec --no-startup-id sh ./i3-volume.sh -n -t $statuscmd -u $statussig mute
+bindsym F6 exec --no-startup-id bash $volumepath/i3-volume -n -t $statuscmd -u $statussig up $volumestep
+bindsym F5 exec --no-startup-id bash $volumepath/i3-volume -n -t $statuscmd -u $statussig down $volumestep
+bindsym F4 exec --no-startup-id bash $volumepath/i3-volume -n -t $statuscmd -u $statussig mute
