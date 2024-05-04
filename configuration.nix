@@ -6,13 +6,14 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
   # home 
   home-manager.backupFileExtension = "backup";
   home-manager.users.keive = {
-	imports = [./home.nix];
+    imports = [ ./home.nix ];
   };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -38,8 +39,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-#  services.xserver.displayManager.gdm.enable = true;
-#  services.xserver.desktopManager.gnome.enable = true;
+  #  services.xserver.displayManager.gdm.enable = true;
+  #  services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
@@ -79,7 +80,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -92,7 +93,7 @@
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
-   
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -119,7 +120,7 @@
     gcc9
     mpv
     gnome.gnome-disk-utility
-   # spotify
+    # spotify
     xfce.xfce4-pulseaudio-plugin
     gscreenshot
   ];
