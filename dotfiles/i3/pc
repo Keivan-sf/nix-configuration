@@ -195,7 +195,7 @@ bar {
 
 # Path to volume control, without trailing slash
 #set $volumepath /etc/nixos/dotfiles/i3/i3-volume
-set $volumepath . 
+set $volumepath ~/.config/i3
 
 # Command for the status line
 #   ie: i3blocks, i3status
