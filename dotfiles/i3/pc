@@ -230,3 +230,8 @@ bindsym F12 exec --no-startup-id gscreenshot -cs
 #dictionary
 bindsym $mod+z exec CURRWORD=$(xclip -out -selection primary) && DEFFWORD=$(wn $CURRWORD -over | sed -e '/^The\s/d' -e 's/^Overview of \([a-z][a-z]*\) \([a-z]*\)/>> \1/' -e '/^\s*$/d' -e 's/$/\n/') && notify-send -h string:bgcolor:#000 "$CURRWORD" "$DEFFWORD" -t 0
 
+#pronounciation / tts
+
+bindsym $mod+x exec "xclip -out -selection primary | \
+  ~/piper/piper --model ~/piper/en_GB-cori-high.onnx --output-raw | \
+  aplay -r 22050 -f S16_LE -t raw -"
