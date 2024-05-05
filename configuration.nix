@@ -128,6 +128,7 @@
     piper-tts
     pavucontrol
     gabutdm
+    woeusb
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
