@@ -127,7 +127,7 @@
     wordnet
     piper-tts
     pavucontrol
-    motrix
+    gabutdm
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
