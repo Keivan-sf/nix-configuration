@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstablepkgs ? import <nixpkgs-unstable> { } ,... }:
+{ config, pkgs, unstable, ... }:
 
 {
   imports =
@@ -102,10 +102,10 @@
     wget
     git
     lazygit
-    unstablepkgs.google-chrome
+    unstable.google-chrome
     i3
     qv2ray
-    unstablepkgs.telegram-desktop
+    unstable.telegram-desktop
     btop
     libnotify
     gscreenshot
@@ -114,7 +114,7 @@
     killall
     neovim
     gh
-    unstablepkgs.neovide
+    unstable.neovide
     rustup
     libgcc
     gcc9
@@ -125,12 +125,12 @@
     gscreenshot
     xclip
     wordnet
-    unstablepkgs.piper-tts
+    unstable.piper-tts
     pavucontrol
     gabutdm
     woeusb
     go
-    unstablepkgs.nodejs_22
+    unstable.nodejs_22
     python3
   ];
 
