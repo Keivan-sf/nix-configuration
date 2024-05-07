@@ -86,6 +86,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  unstable.config.allowUnfree = true;
   # flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # fonts
