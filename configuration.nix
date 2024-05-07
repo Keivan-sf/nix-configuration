@@ -133,6 +133,7 @@
     unstable.nodejs_22
     python3
     v2raya
+    unzip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
