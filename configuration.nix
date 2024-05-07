@@ -86,7 +86,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  unstable.config.allowUnfree = true;
   # flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # fonts
@@ -103,7 +102,7 @@
     wget
     git
     lazygit
-    unstable.google-chrome
+    google-chrome
     i3
     qv2ray
     unstable.telegram-desktop
