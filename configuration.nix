@@ -132,6 +132,7 @@
     go
     unstable.nodejs_22
     python3
+    v2raya
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
