@@ -130,6 +130,7 @@
     gabutdm
     woeusb
     go
+    nodejs_22
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
