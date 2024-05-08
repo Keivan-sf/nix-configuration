@@ -134,6 +134,7 @@
     python3
     v2raya
     unzip
+    vscode
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
