@@ -136,7 +136,7 @@
     unzip
     # vscode
     kitty
-    neve
+    neve.default
   ];
  
   environment.sessionVariables = rec {
