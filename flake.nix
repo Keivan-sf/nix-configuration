@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    Neve.url = "github:redyf/Neve";
 
     home-manager = {
       url = "github:nix-community/home-manager";
