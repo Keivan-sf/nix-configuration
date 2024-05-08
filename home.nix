@@ -15,6 +15,5 @@
       update = "sudo nixos-rebuild switch --flakes #.pc";
     };
     history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
   };
 }
