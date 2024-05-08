@@ -17,6 +17,10 @@
     { device = "/dev/disk/by-uuid/706ee3ac-c37f-4273-adaa-60de85200cc0";
       fsType = "ext4";
     };
+  fileSystems."/efi" = {
+	device = "/dev/disk/by-uuid/78E1-2B65";
+        fsType = "autofs";
+   }
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/e5472919-a923-4f95-b7c6-0672361f0948"; }
