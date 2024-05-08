@@ -15,7 +15,7 @@
       update = "sudo nixos-rebuild switch --flakes #.pc";
     };
     history.size = 10000;
-    ohMyZsh = {
+    oh-my-zsh = {
       enable = true;
       plugins = [ "git" "python" "man" "vi-mode" "docker" "docker-compose" ];
       theme = "robbyrussell";
