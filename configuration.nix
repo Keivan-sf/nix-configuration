@@ -142,18 +142,6 @@
     TERMINAL = "kitty";
   };
   
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      ll = "ls -la";
-      update = "sudo nixos-rebuild switch --flakes #.pc";
-    };
-    history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
