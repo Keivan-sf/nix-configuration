@@ -12,7 +12,7 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -la";
-      update = "sudo nixos-rebuild switch --flakes #.pc";
+      update = "sudo nixos-rebuild switch --flake .#pc";
     };
     history.size = 10000;
     oh-my-zsh = {
