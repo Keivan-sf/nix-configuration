@@ -141,6 +141,8 @@
   environment.sessionVariables = rec {
     TERMINAL = "kitty";
   };
+
+  environment.shells = with pkgs; [ zsh ];
   
 
   # Some programs need SUID wrappers, can be configured further or are
