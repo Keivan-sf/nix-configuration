@@ -20,7 +20,7 @@
   fileSystems."/efi" = {
 	device = "/dev/disk/by-uuid/78E1-2B65";
         fsType = "autofs";
-   }
+   };
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/e5472919-a923-4f95-b7c6-0672361f0948"; }
