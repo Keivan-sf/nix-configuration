@@ -18,6 +18,7 @@
         system = "x86_64-linux";
         specialArgs = inputs // {
           unstable = inputs.unstable.legacyPackages.${system};
+          neve = inputs.Neve.packages.${system};
         };
       in
       {
