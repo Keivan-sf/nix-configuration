@@ -138,6 +138,7 @@
     kitty
     neve.default
     sing-box
+    make
   ];
  
   environment.sessionVariables = rec {
