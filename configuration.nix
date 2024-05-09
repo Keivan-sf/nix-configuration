@@ -143,6 +143,7 @@
     #rocmPackages.llvm.clang
     #rocmPackages.llvm.clang-tools-extra
     clang-tools
+    lua
   ];
  
   environment.sessionVariables = rec {
