@@ -138,7 +138,7 @@
     kitty
     neve.default
     sing-box
-    make
+    gnumake
   ];
  
   environment.sessionVariables = rec {
