@@ -137,6 +137,7 @@
     # vscode
     kitty
     neve.default
+    sing-box
   ];
  
   environment.sessionVariables = rec {
