@@ -140,8 +140,9 @@
     sing-box
     gnumake
     deno
-    rocmPackages.llvm.clang
-    rocmPackages.llvm.clang-tools-extra
+    #rocmPackages.llvm.clang
+    #rocmPackages.llvm.clang-tools-extra
+    clang-tools
   ];
  
   environment.sessionVariables = rec {
