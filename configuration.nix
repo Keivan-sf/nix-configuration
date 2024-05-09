@@ -120,7 +120,7 @@
     gcc9
     mpv
     gnome.gnome-disk-utility
-    # spotify
+    spotify
     xfce.xfce4-pulseaudio-plugin
     gscreenshot
     xclip
