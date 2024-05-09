@@ -145,6 +145,7 @@
     clang-tools
     lua
     unstable.lua-language-server
+    corepack_21
   ];
  
   environment.sessionVariables = rec {
