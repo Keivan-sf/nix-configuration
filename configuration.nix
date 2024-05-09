@@ -144,6 +144,7 @@
     #rocmPackages.llvm.clang-tools-extra
     clang-tools
     lua
+    lua53Packages.lua-lsp
   ];
  
   environment.sessionVariables = rec {
