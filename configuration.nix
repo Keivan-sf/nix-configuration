@@ -146,6 +146,7 @@
     lua
     unstable.lua-language-server
     corepack_21
+    nil
   ];
  
   environment.sessionVariables = rec {
