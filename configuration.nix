@@ -139,6 +139,7 @@
     neve.default
     sing-box
     gnumake
+    deno
   ];
  
   environment.sessionVariables = rec {
