@@ -147,6 +147,7 @@
     unstable.lua-language-server
     corepack_21
     nil
+    gnome.nautilus
   ];
  
   environment.sessionVariables = rec {
