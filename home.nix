@@ -13,6 +13,9 @@
     shellAliases = {
       ll = "ls -la";
       update = "sudo nixos-rebuild switch --flake .#pc";
+      nvv = "neovide";
+      xoo = "xdg-open . &";
+      xo = "xdg-open";
     };
     history.size = 10000;
     oh-my-zsh = {

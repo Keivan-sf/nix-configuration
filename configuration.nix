@@ -160,6 +160,12 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;  
 
+  # xdg
+  xdg.mime.defaultApplications = {
+   "inode/directory" = "nautilus";
+   "video/x-matroska" = "mpv";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
