@@ -14,7 +14,7 @@
       ll = "ls -la";
       update = "sudo nixos-rebuild switch --flake .#pc";
       nv = "neovide";
-      xo = "$(nohup nautilus . 1>/dev/null 2>/dev/null & exit 1>/dev/null)";
+      xon = "$(nohup nautilus . 1>/dev/null 2>/dev/null & exit 1>/dev/null)";
     };
     history.size = 10000;
     oh-my-zsh = {
