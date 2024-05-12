@@ -26,7 +26,7 @@
         pc = nixpkgs.lib.nixosSystem {
           specialArgs = specialArgs;
           modules = [
-            ./configuration.nix
+            ./conf-pc.nix
             inputs.home-manager.nixosModules.default
           ];
         };

@@ -12,9 +12,6 @@
     ];
   # home 
   home-manager.backupFileExtension = "backup";
-  home-manager.users.keive = {
-    imports = [ ./home.nix ];
-  };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
