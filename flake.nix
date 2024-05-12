@@ -30,6 +30,15 @@
             inputs.home-manager.nixosModules.default
           ];
         };
+
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = specialArgs;
+          modules = [
+            ./conf-laptop.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
+
       };
   };
 }
