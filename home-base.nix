@@ -29,13 +29,15 @@
     settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
-#        prefer-color-scheme = "dark";
+        prefer-color-scheme = "dark";
       };
     };
   };
   gtk = {
     enable = true;
     theme = {
+      gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+      gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
       name="adw-gtk3-dark";
       package = pkgs.adw-gtk3;
     };
