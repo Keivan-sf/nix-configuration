@@ -25,15 +25,19 @@
     settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
+        prefer-color-scheme = "dark";
       };
     };
   };
   gtk = {
     enable = true;
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
     theme = {
       name="Materia-dark";
       package = pkgs.materia-theme;
     };
+
   };
   programs.git = {
     enable = true;
