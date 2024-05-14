@@ -141,6 +141,7 @@
     nil
     gnome.nautilus
     feh
+    picom
   ];
  
   environment.sessionVariables = rec {
