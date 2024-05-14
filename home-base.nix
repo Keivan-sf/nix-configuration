@@ -30,6 +30,7 @@
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
         prefer-color-scheme = "dark";
+        gtk-theme = "Materia-dark";
       };
     };
   };
