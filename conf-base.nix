@@ -143,12 +143,12 @@
     feh
     picom
   ];
+
+  services.picom.enable = true;
  
   environment.sessionVariables = rec {
     TERMINAL = "kitty";
   };
-
-
 
   environment.shells = with pkgs; [ zsh ];
   programs.zsh.enable = true;
