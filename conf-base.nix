@@ -140,6 +140,7 @@
     corepack_21
     nil
     gnome.nautilus
+    feh
   ];
  
   environment.sessionVariables = rec {
