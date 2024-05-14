@@ -1,4 +1,8 @@
 { pkgs,... }: {
+  home.packages = with pkgs; [
+    adw-gtk3
+    materia-theme
+  ];
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
   xdg.configFile."neovide/config.toml".source = ./dotfiles/neovide/config.toml;
@@ -34,10 +38,8 @@
     gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
     gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
     theme = {
-      name="Materia-dark";
-      package = pkgs.materia-theme;
+      name="adw-gtk3-dark";
     };
-
   };
   programs.git = {
     enable = true;
