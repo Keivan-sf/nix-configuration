@@ -8,7 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configuration-pc.nix
+      ./hardware-configuration-laptop.nix
       ./conf-base.nix
     ];
   # home 
