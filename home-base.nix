@@ -10,7 +10,6 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -la";
-      update = "sudo nixos-rebuild switch --flake .#pc";
       nv = "neovide";
       xon = "echo \"$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)\" | sh";
     };
