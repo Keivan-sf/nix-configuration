@@ -142,6 +142,7 @@
     gnome.nautilus
     feh
     picom
+    ripgrep
   ];
 
   services.picom.enable = true;
