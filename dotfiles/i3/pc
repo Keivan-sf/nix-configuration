@@ -247,3 +247,6 @@ exec --no-startup-id killall xfce4-notifyd; dunst
 
 # wallpaper
 exec --no-startup-id feh --bg-scale ~/background 
+
+# gaps
+gaps inner 10px
