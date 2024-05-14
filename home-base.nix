@@ -20,4 +20,10 @@
       theme = "robbyrussell";
     };
   };
+
+  programs.git = {
+    enable = true;
+    userName = "keivan-sf";
+    userEmail = "keyvan0082@gmail.com";
+  };
 }
