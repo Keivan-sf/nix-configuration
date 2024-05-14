@@ -18,6 +18,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/winlean" =
+    { device = "/dev/disk/by-uuid/01DAA516DB159820";
+      fsType = "ntfs";
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/78E1-2B65";
       fsType = "vfat";
