@@ -143,6 +143,7 @@
     feh
     picom
     ripgrep
+    bc
   ];
 
   services.picom.enable = true;
