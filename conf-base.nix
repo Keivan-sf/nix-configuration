@@ -144,6 +144,7 @@
     picom
     ripgrep
     bc
+    nodePackages.typescript
   ];
 
   services.picom.enable = true;
