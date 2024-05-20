@@ -1,7 +1,7 @@
 COMMIT_MSG="$*"
 
 if [ -z $COMMIT_MSG ]; then
-	COMMIT_MSG="Auto-generated message"
+	COMMIT_MSG="auto-generated message"
 fi
 
 echo -e "\n[pupdate] Adding all files to the staging area ... " &&
