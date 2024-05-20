@@ -19,6 +19,6 @@ echo -e "\n[pupdate] Pulling in /etx/nixos ..." &&
 sudo git pull origin main &&
 
 echo -e "\n[pupdate] updating ..." &&
-sudo nixos-rebuild switch --flake .#laptop &&
+sudo update &&
 
 echo -e "\n[pupdate] Done"
