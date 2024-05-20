@@ -17,9 +17,9 @@ git push origin main &&
 cd /etc/nixos &&
 
 echo -e "\n[pupdate] Pulling in /etx/nixos ..." &&
-&& sudo git pull origin main &&
+sudo git pull origin main &&
 
 echo -e "\n[pupdate] updating ..." &&
-&& update &&
+update &&
 
 echo -e "\n[pupdate] Done"
