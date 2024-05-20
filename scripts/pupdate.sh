@@ -1,5 +1,4 @@
-COMMIT_MSG=$1
-COMMIT_DESC=$2
+COMMIT_MSG="$*"
 
 if [ -z $COMMIT_MSG ]; then
 	COMMIT_MSG="auto generated message"
@@ -9,7 +8,7 @@ echo -e "\n[pupdate] Adding all files to the staging area ... " &&
 git add . &&
 
 echo -e "\n[pupdate] Commitng changes ..." &&
-git commit -m $COMMIT_MSG $COMMIT_DESC &&
+git commit -m $COMMIT_MSG &&
 
 echo -e "\n[pupdate] Pushing to the origin ..." &&
 git push origin main &&
