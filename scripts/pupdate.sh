@@ -8,7 +8,7 @@ echo -e "\n[pupdate] Adding all files to the staging area ... " &&
 git add . &&
 
 echo -e "\n[pupdate] Commitng changes ..." &&
-git commit -m $COMMIT_MSG &&
+git commit -m "$COMMIT_MSG" &&
 
 echo -e "\n[pupdate] Pushing to the origin ..." &&
 git push origin main &&
