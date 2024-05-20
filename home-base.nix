@@ -5,7 +5,6 @@
   ];
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
-  xdg.configFile."neovide/config.toml".source = ./dotfiles/neovide/config.toml;
   xdg.configFile."kitty/kitty.conf".source = ./dotfiles/kitty/kitty.conf;
 
   programs.zsh = {
