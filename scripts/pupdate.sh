@@ -19,6 +19,6 @@ echo -e "\n[pupdate] Pulling in /etx/nixos ..." &&
 sudo git pull origin main &&
 
 echo -e "\n[pupdate] updating ..." &&
-sudo update &&
+update &&
 
 echo -e "\n[pupdate] Done"
