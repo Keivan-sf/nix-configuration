@@ -1,4 +1,4 @@
-{  pkgs, ... }: let pupdatebin = pkgs.writeScriptBin "pupdate" "${builtins.readFile ./scripts/pupdate.sh}"; system-name = "laptop"; in {
+{  pkgs, ... }: let pupdatebin = pkgs.writeScriptBin "pupdate" "SYSTEM_NAME='laptop'\n ${builtins.readFile ./scripts/pupdate.sh}"; in {
   imports = [./home-base.nix];
   xdg.configFile."i3/config".source = ./dotfiles/i3/laptop;
   xdg.configFile."neovide/config.toml".source = ./dotfiles/neovide/config-laptop.toml;
