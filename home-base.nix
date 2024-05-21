@@ -16,7 +16,7 @@
       ll = "ls -la";
       nv = "neovide";
       xon = "echo \"$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)\" | sh";
-      pupdate = "(" + builtins.readFile ./scripts/pupdate.sh + ")";
+      #pupdate = "(" + builtins.readFile ./scripts/pupdate.sh + ")";
     };
     history.size = 10000;
     oh-my-zsh = {
