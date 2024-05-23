@@ -15,4 +15,8 @@
   home-manager.users.keive = {
     imports = [ ./home-pc.nix ];
   };
+
+  environment.systemPackages = with pkgs; [
+    openrgb-with-all-plugins
+  ];
 }
