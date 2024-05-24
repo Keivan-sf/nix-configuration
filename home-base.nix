@@ -1,8 +1,5 @@
-{ pkgs,... }: {
-  home.packages = with pkgs; [
-    adw-gtk3
-    materia-theme
-  ];
+{ pkgs, ... }: {
+  home.packages = with pkgs; [ adw-gtk3 materia-theme ];
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
   xdg.configFile."kitty/kitty.conf".source = ./dotfiles/kitty/kitty.conf;
@@ -15,7 +12,8 @@
     shellAliases = {
       ll = "ls -la";
       nv = "neovide";
-      xon = "echo \"$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)\" | sh";
+      xon = ''
+        echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'';
       #pupdate = "(" + builtins.readFile ./scripts/pupdate.sh + ")";
     };
     history.size = 10000;
@@ -39,7 +37,7 @@
     gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
     gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
     theme = {
-      name="adw-gtk3-dark";
+      name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
     };
   };

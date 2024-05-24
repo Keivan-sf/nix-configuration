@@ -5,14 +5,11 @@
 { config, pkgs, unstable, neve, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration-laptop.nix
-      ./conf-base.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration-laptop.nix
+    ./conf-base.nix
+  ];
   # home 
-  home-manager.users.keive = {
-    imports = [ ./home-laptop.nix ];
-  };
+  home-manager.users.keive = { imports = [ ./home-laptop.nix ]; };
 }

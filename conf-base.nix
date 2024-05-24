@@ -70,10 +70,11 @@
     isNormalUser = true;
     description = "keive";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      #  thunderbird
-    ];
+    packages = with pkgs;
+      [
+        firefox
+        #  thunderbird
+      ];
   };
 
   # Allow unfree packages
@@ -81,11 +82,8 @@
   # flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # fonts
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-  ];
-
-
+  fonts.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -150,19 +148,17 @@
   ];
 
   services.picom.enable = true;
- 
-  environment.sessionVariables = rec {
-    TERMINAL = "kitty";
-  };
+
+  environment.sessionVariables = rec { TERMINAL = "kitty"; };
 
   environment.shells = with pkgs; [ zsh ];
   programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;  
+  users.defaultUserShell = pkgs.zsh;
 
   # xdg
   xdg.mime.defaultApplications = {
-   "inode/directory" = "nautilus";
-   "video/x-matroska" = "mpv";
+    "inode/directory" = "nautilus";
+    "video/x-matroska" = "mpv";
   };
 
   xdg.mime.enable = true;

@@ -5,18 +5,13 @@
 { config, pkgs, unstable, neve, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration-pc.nix
-      ./conf-base.nix
-    ];
-  # home 
-  home-manager.users.keive = {
-    imports = [ ./home-pc.nix ];
-  };
-
-  environment.systemPackages = with pkgs; [
-    openrgb-with-all-plugins
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration-pc.nix
+    ./conf-base.nix
   ];
+  # home 
+  home-manager.users.keive = { imports = [ ./home-pc.nix ]; };
+
+  environment.systemPackages = with pkgs; [ openrgb-with-all-plugins ];
 }
