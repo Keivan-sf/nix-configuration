@@ -146,6 +146,7 @@
     bc
     nodePackages.typescript
     nodePackages.typescript-language-server
+    nixfmt
   ];
 
   services.picom.enable = true;
