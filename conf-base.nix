@@ -146,6 +146,7 @@
     bc
     nodePackages.typescript
     nodePackages.typescript-language-server
+    insomnia
   ];
 
   services.picom.enable = true;
