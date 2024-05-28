@@ -14,31 +14,24 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations =
-      let
-        system = "x86_64-linux";
-        specialArgs = inputs // {
-          unstable = inputs.unstable.legacyPackages.${system};
-          neve = inputs.Neve.packages.${system};
-        };
-      in
-      {
-        pc = nixpkgs.lib.nixosSystem {
-          specialArgs = specialArgs;
-          modules = [
-            ./conf-pc.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
-
-        laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = specialArgs;
-          modules = [
-            ./conf-laptop.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
-
+    nixosConfigurations = let
+      system = "x86_64-linux";
+      specialArgs = inputs // {
+        unstable = inputs.unstable.legacyPackages.${system};
+        neve = inputs.Neve.packages.${system};
       };
+    in {
+      pc = nixpkgs.lib.nixosSystem {
+        specialArgs = specialArgs;
+        modules = [ ./conf-pc.nix inputs.home-manager.nixosModules.default ];
+      };
+
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = specialArgs;
+        modules =
+          [ ./conf-laptop.nix inputs.home-manager.nixosModules.default ];
+      };
+
+    };
   };
 }
