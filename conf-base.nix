@@ -147,6 +147,7 @@
     nodePackages.typescript
     nodePackages.typescript-language-server
     insomnia
+    nixfmt
   ];
 
   services.picom.enable = true;
