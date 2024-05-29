@@ -146,6 +146,7 @@
     nodePackages.typescript-language-server
     insomnia
     nixfmt
+    proxychains
   ];
 
   services.picom.enable = true;
