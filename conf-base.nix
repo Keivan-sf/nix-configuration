@@ -144,6 +144,7 @@
     bc
     nodePackages.typescript
     nodePackages.typescript-language-server
+    nodePackages.svelte-language-server
     insomnia
     nixfmt
     proxychains
