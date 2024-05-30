@@ -148,6 +148,7 @@
     insomnia
     nixfmt
     proxychains
+    vscode-langservers-extracted
   ];
 
   services.picom.enable = true;
