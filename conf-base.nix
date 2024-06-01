@@ -149,6 +149,7 @@
     nixfmt
     proxychains
     vscode-langservers-extracted
+    python311Packages.python-lsp-server
   ];
 
   services.picom.enable = true;
