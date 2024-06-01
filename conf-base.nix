@@ -150,6 +150,7 @@
     proxychains
     vscode-langservers-extracted
     python311Packages.python-lsp-server
+    python311Packages.autopep8
   ];
 
   services.picom.enable = true;
