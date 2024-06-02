@@ -135,7 +135,7 @@
     clang-tools
     lua
     unstable.lua-language-server
-    corepack_21
+    corepack_22
     nil
     gnome.nautilus
     feh
