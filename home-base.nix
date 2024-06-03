@@ -6,6 +6,7 @@
 
   programs.zsh = {
     enable = true;
+    initExtra = ''eval "$(zoxide init zsh)"'';
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
