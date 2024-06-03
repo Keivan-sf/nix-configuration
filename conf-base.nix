@@ -151,10 +151,7 @@
     vscode-langservers-extracted
     python311Packages.python-lsp-server
     python311Packages.autopep8
-    #python311Packages.numpy
-    #
     python3.pkgs.pip
-    python3.pkgs.numpy
     pyright
     zoxide
   ];
