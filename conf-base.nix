@@ -152,7 +152,7 @@
     python311Packages.python-lsp-server
     python311Packages.autopep8
     python311Packages.numpy
-    python311Packages.pip
+    python.packages.pip
     pyright
     zoxide
   ];
