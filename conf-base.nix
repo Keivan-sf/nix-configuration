@@ -153,7 +153,7 @@
     python311Packages.autopep8
     python311Packages.numpy
     #
-    python.packages.pip
+    python3.pkgs.pip
     pyright
     zoxide
   ];
