@@ -152,6 +152,7 @@
     python311Packages.python-lsp-server
     python311Packages.autopep8
     pyright
+    zoxide
   ];
 
   services.picom.enable = true;
