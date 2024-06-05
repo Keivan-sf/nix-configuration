@@ -154,6 +154,7 @@
     python3.pkgs.pip
     pyright
     zoxide
+    libsForQt5.kget
   ];
 
   services.picom.enable = true;
