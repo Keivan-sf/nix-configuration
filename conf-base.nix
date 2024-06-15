@@ -155,9 +155,11 @@
     pyright
     zoxide
     libsForQt5.kget
+    expressvpn
   ];
 
   services.picom.enable = true;
+  services.expressvpn.enable = true;
 
   environment.sessionVariables = rec { TERMINAL = "kitty"; };
 
