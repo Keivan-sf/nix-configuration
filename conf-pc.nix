@@ -13,7 +13,10 @@
   # home 
   home-manager.users.keive = { imports = [ ./home-pc.nix ]; };
 
-  environment.systemPackages = with pkgs; [ openrgb-with-all-plugins ];
+  environment.systemPackages = with pkgs; [
+    openrgb-with-all-plugins
+    i2c-tools
+  ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
 }
