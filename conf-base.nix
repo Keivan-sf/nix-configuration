@@ -156,6 +156,7 @@
     zoxide
     libsForQt5.kget
     expressvpn
+    fzf
   ];
 
   services.picom.enable = true;
