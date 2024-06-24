@@ -110,6 +110,7 @@
     gcc9
     mpv
     gnome.gnome-disk-utility
+    gnome.gnome-sound-recorder
     spotify
     xfce.xfce4-pulseaudio-plugin
     gscreenshot
