@@ -158,6 +158,7 @@
     libsForQt5.kget
     expressvpn
     fzf
+    nest-cli
   ];
 
   services.picom.enable = true;
