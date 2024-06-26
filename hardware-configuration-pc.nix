@@ -9,7 +9,7 @@
   boot.initrd.availableKernelModules =
     [ "vmd" "xhci_pci" "ahci" "nvme" "usbhid" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-intel" "i2c-dev" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
