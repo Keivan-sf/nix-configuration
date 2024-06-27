@@ -159,6 +159,7 @@
     expressvpn
     fzf
     nest-cli
+    postgresql_16
   ];
 
   # services
