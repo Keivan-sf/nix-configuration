@@ -161,8 +161,12 @@
     nest-cli
   ];
 
+  # services
   services.picom.enable = true;
   services.expressvpn.enable = true;
+
+  # virtualisation
+  virtualisation.docker.enable = true;
 
   environment.sessionVariables = rec { TERMINAL = "kitty"; };
 
