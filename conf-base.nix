@@ -165,6 +165,7 @@
     nodePackages.prisma
     direnv
     nodePackages."@prisma/language-server"
+    nodePackages.prettier
   ];
 
   # services
