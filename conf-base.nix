@@ -162,6 +162,7 @@
     postgresql_16
     dbeaver-bin
     discord
+    nodePackages.prisma
   ];
 
   # services
