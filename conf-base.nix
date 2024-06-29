@@ -163,6 +163,7 @@
     dbeaver-bin
     discord
     nodePackages.prisma
+    direnv
   ];
 
   # services
