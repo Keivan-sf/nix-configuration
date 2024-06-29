@@ -161,6 +161,7 @@
     nest-cli
     postgresql_16
     dbeaver-bin
+    discord
   ];
 
   # services
