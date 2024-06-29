@@ -164,6 +164,7 @@
     discord
     nodePackages.prisma
     direnv
+    nodePackages."@prisma/language-server"
   ];
 
   # services
