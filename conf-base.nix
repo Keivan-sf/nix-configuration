@@ -162,10 +162,11 @@
     postgresql_16
     dbeaver-bin
     discord
-    nodePackages.prisma
     direnv
     nodePackages."@prisma/language-server"
     nodePackages.prettier
+    openssl
+    nodePackages.prisma
   ];
 
   # services
