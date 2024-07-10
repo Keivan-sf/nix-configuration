@@ -167,6 +167,7 @@
     nodePackages.prettier
     openssl
     nodePackages.prisma
+    eslint_d
   ];
 
   # services
