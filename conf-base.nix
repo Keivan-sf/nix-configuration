@@ -168,6 +168,7 @@
     openssl
     nodePackages.prisma
     eslint_d
+    bun
   ];
 
   # services
