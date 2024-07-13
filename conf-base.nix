@@ -169,6 +169,7 @@
     nodePackages.prisma
     eslint_d
     bun
+    lzip
   ];
 
   # services
