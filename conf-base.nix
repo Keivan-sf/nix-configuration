@@ -170,6 +170,7 @@
     eslint_d
     bun
     lzip
+    dpkg
   ];
 
   # services
