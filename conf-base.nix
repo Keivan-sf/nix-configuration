@@ -171,6 +171,9 @@
     bun
     lzip
     dpkg
+    pgadmin4
+    csharp-ls
+    dotnet-sdk_8
   ];
 
   # services
