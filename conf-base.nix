@@ -174,6 +174,7 @@
     pgadmin4
     csharp-ls
     dotnet-sdk_8
+    ncompress
   ];
 
   # services
