@@ -175,6 +175,10 @@
     csharp-ls
     dotnet-sdk_8
     ncompress
+    codespell
+    nodePackages.cspell
+    weston
+    wireguard-tools
   ];
 
   # services
