@@ -179,6 +179,7 @@
     nodePackages.cspell
     weston
     wireguard-tools
+    tree
   ];
 
   # services
