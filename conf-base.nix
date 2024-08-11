@@ -180,6 +180,7 @@
     weston
     wireguard-tools
     tree
+    gdb
   ];
 
   # services
