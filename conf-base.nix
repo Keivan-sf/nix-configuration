@@ -181,6 +181,7 @@
     wireguard-tools
     tree
     gdb
+    nekoray
   ];
 
   # services
