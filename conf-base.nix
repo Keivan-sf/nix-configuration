@@ -182,6 +182,8 @@
     tree
     gdb
     nekoray
+    stylua 
+    astyle
   ];
 
   # services
