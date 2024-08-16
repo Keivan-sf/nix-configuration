@@ -184,6 +184,7 @@
     nekoray
     stylua 
     astyle
+    obs-studio
   ];
 
   # services
