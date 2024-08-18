@@ -4,7 +4,7 @@
   xdg.configFile."neovide/config.toml".source =
     ./dotfiles/neovide/config-laptop.toml;
   programs.zsh.shellAliases.update =
-    "sudo nixos-rebuild switch --flake .#laptop && (echo 'cd ./nodePackages && npm i' | sh)";
+    "sudo nixos-rebuild switch --flake .#laptop";
   programs.zsh.shellAliases.pupdate = let
     pupdatebin = pkgs.writeScriptBin "pupdate" ''
       SYSTEM_NAME='laptop'
