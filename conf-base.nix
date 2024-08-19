@@ -185,6 +185,7 @@
     stylua 
     astyle
     obs-studio
+    libsForQt5.kdenlive
   ];
 
   # services
