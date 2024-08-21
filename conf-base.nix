@@ -187,6 +187,7 @@
     obs-studio
     libsForQt5.kdenlive
     unrar
+    tor-browser
   ];
 
   # services
