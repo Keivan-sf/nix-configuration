@@ -182,10 +182,11 @@
     tree
     gdb
     nekoray
-    stylua 
+    stylua
     astyle
     obs-studio
     libsForQt5.kdenlive
+    unrar
   ];
 
   # services
