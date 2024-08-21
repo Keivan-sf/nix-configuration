@@ -188,6 +188,7 @@
     libsForQt5.kdenlive
     unrar
     tor-browser
+    calibre
   ];
 
   # services
