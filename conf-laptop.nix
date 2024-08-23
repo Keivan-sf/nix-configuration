@@ -10,6 +10,11 @@
     ./hardware-configuration-laptop.nix
     ./conf-base.nix
   ];
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   # home 
   home-manager.users.keive = { imports = [ ./home-laptop.nix ]; };
 }
