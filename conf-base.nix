@@ -104,7 +104,7 @@
     killall
     neovim
     gh
-    unstable.neovide
+    neovide
     rustup
     libgcc
     gcc9
