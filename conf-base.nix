@@ -187,6 +187,21 @@
     unrar
     tor-browser
     calibre
+    ### libs used for guilded
+    steam-run
+    autoPatchelfHook
+    gtk3
+    nss # xorg.libXScrnSaver
+    xorg.libXtst
+    xdg-utils
+    at-spi2-atk
+    libuuid
+    libsecret
+    ffmpeg-full
+    ffmpeg-headless
+    vivaldi-ffmpeg-codecs
+    alsa-lib
+    ### end libs used for guilded
   ];
 
   # services
