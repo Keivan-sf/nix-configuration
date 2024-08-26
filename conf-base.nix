@@ -164,6 +164,7 @@
     nodePackages.prettier
     openssl
     nodePackages.prisma
+    nodePackages.dotenv-cli
     eslint_d
     bun
     lzip
