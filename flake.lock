@@ -208,40 +208,7 @@
         "type": "github"
       }
     },
-    "nix-serve": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1712573659,
-        "narHash": "sha256-N7MK+m7hP34ALPy2tKgfPmz+uj/pkbh1Wq771BMHAfI=",
-        "owner": "edolstra",
-        "repo": "nix-serve",
-        "rev": "4a12660e6fa8fce662c0a652280a3309fa822465",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "nix-serve",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1606086654,
-        "narHash": "sha256-VFl+3eGIMqNp7cyOMJ6TjM/+UcsLKtodKoYexrlTJMI=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "19db3e5ea2777daa874563b5986288151f502e27",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-20.09",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
       "locked": {
         "lastModified": 1717144377,
         "narHash": "sha256-F/TKWETwB5RaR8owkPPi+SPJh83AQsm6KrQAlJ8v/uA=",
@@ -257,7 +224,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1714906307,
         "narHash": "sha256-UlRZtrCnhPFSJlDQE7M0eyhgvuuHBTe1eJ9N9AQlJQ0=",
@@ -281,7 +248,7 @@
         "flake-root": "flake-root",
         "home-manager": "home-manager_2",
         "nix-darwin": "nix-darwin",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "pre-commit-hooks": "pre-commit-hooks",
         "treefmt-nix": "treefmt-nix"
       },
@@ -330,8 +297,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nix-serve": "nix-serve",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "unstable": "unstable"
       }
