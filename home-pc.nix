@@ -4,7 +4,9 @@
   xdg.configFile."i3/i3-volume".source = ./dotfiles/i3/i3-volume;
   xdg.configFile."neovide/config.toml".source =
     ./dotfiles/neovide/config-pc.toml;
-  programs.zsh.shellAliases.update = "sudo nixos-rebuild switch --impure --flake .#pc";
+  programs.zsh.shellAliases.update =
+    "sudo nixos-rebuild switch --impure --flake .#pc";
+  programs.zsh.shellAliases.nix-serve = "nix run github:edolstra/nix-serve";
   programs.zsh.shellAliases.pupdate = let
     pupdatebin = pkgs.writeScriptBin "pupdate" ''
       SYSTEM_NAME='pc'
