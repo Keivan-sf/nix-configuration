@@ -6,6 +6,7 @@
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
     Neve.url = "github:redyf/Neve";
+    nix-serve.url = "github:edolstra/nix-serve";
 
     home-manager = {
       url = "github:nix-community/home-manager";
