@@ -248,5 +248,9 @@ exec --no-startup-id killall xfce4-notifyd; dunst
 # wallpaper
 exec --no-startup-id feh --bg-scale ~/background 
 
+# guilded
+exec --no-startup-id "~/guilded/run-guilded" 
+assing [class="guilded"] 9
+
 # gaps
 # gaps inner 10px
