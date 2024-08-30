@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, neve, secrets, ... }:
+{ config, pkgs, unstable, secrets, ... }:
 
 {
   # home 
@@ -124,7 +124,6 @@
     unzip
     # vscode
     kitty
-    neve.default
     sing-box
     gnumake
     deno
