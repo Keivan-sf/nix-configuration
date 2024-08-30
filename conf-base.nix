@@ -236,7 +236,8 @@
   networking.wg-quick.interfaces = {
     wg0 = {
       address = [ "10.66.66.2/32" "fd42:42:42::2/128" ];
-      dns = [ "1.1.1.1" "1.0.0.1" ];
+      # dns = [ "1.1.1.1" "1.0.0.1" ];
+      dns = [ "178.22.122.100" "185.51.200.2" ];
       privateKeyFile = "/etc/secrets/wg-private-key";
       peers = [{
         publicKey = "LpsbUdenuvtsQnPl/wUBNJqYpZh7FeFJpGsvSjaKABw=";
