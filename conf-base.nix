@@ -2,7 +2,6 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, neve, ... }:
 { config, pkgs, unstable, neve, secrets, ... }:
 
 {
@@ -203,6 +202,9 @@
     vivaldi-ffmpeg-codecs
     alsa-lib
     ### end libs used for guilded
+    gnupg
+    pinentry-tty
+    age
   ];
 
   # services
