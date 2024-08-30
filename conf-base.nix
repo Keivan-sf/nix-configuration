@@ -225,6 +225,21 @@
 
   xdg.mime.enable = true;
 
+  networking.wg-quick.interfaces = {
+    wg0 = {
+      address = [ "10.66.66.2/32" "fd42:42:42::2/128" ];
+      dns= ["1.1.1.1" "1.0.0.1"];
+      privateKeyFile = "/etc/secrets/wg-private-key";
+      peers = [
+        {
+         publicKey = "LpsbUdenuvtsQnPl/wUBNJqYpZh7FeFJpGsvSjaKABw=";
+         presharedKey = "0VHJiOiXGQ1eZHEbqmhuxSXf04EjmfIduWkO1tZU3Mc=";
+         endpoint = "62.60.204.234:50671";
+         allowedIPs = ["0.0.0.0/0" "::/0"];
+        }
+      ];
+    };
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
