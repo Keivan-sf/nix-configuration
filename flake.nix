@@ -19,6 +19,7 @@
       specialArgs = inputs // {
         unstable = inputs.unstable.legacyPackages.${system};
         neve = inputs.Neve.packages.${system};
+        secrets = import /etc/secrets.nix;
       };
     in {
       pc = nixpkgs.lib.nixosSystem {
