@@ -247,21 +247,21 @@
     partOf = [ "multi-user.target" ];
   };
 
-  networking.wg-quick.interfaces = {
-    wg0 = {
-      address = [ "10.66.66.2/32" "fd42:42:42::2/128" ];
-      dns = [ "1.1.1.1" "1.0.0.1" ];
-      # dns = [ "178.22.122.100" "185.51.200.2" ];
-      # dns = [ "185.55.226.26" "185.55.225.25" ];
-      privateKey = secrets.wg.private-key;
-      peers = [{
-        publicKey = "LpsbUdenuvtsQnPl/wUBNJqYpZh7FeFJpGsvSjaKABw=";
-        presharedKey = "0VHJiOiXGQ1eZHEbqmhuxSXf04EjmfIduWkO1tZU3Mc=";
-        endpoint = secrets.wg.endpoint;
-        allowedIPs = [ "0.0.0.0/0" "::/0" ];
-      }];
-    };
-  };
+  # networking.wg-quick.interfaces = {
+  #   wg0 = {
+  #     address = [ "10.66.66.2/32" "fd42:42:42::2/128" ];
+  #     dns = [ "1.1.1.1" "1.0.0.1" ];
+  #     # dns = [ "178.22.122.100" "185.51.200.2" ];
+  #     # dns = [ "185.55.226.26" "185.55.225.25" ];
+  #     privateKey = secrets.wg.private-key;
+  #     peers = [{
+  #       publicKey = "LpsbUdenuvtsQnPl/wUBNJqYpZh7FeFJpGsvSjaKABw=";
+  #       presharedKey = "0VHJiOiXGQ1eZHEbqmhuxSXf04EjmfIduWkO1tZU3Mc=";
+  #       endpoint = secrets.wg.endpoint;
+  #       allowedIPs = [ "0.0.0.0/0" "::/0" ];
+  #     }];
+  #   };
+  # };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
