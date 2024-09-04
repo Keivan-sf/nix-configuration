@@ -206,6 +206,18 @@
     age
   ];
 
+  programs.proxychains = {
+    enable = true;
+    proxies = {
+      prx1 = {
+        enable = true;
+        type = "socks5";
+        host = "127.0.0.1";
+        port = 20170;
+      };
+    };
+  };
+
   # services
   services.picom.enable = true;
   services.expressvpn.enable = true;
