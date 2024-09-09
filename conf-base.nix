@@ -205,6 +205,7 @@
     pinentry-tty
     age
     wine
+    godot_4
   ];
 
   programs.proxychains = {
