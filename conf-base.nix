@@ -204,6 +204,7 @@
     gnupg
     pinentry-tty
     age
+    wine
   ];
 
   programs.proxychains = {
