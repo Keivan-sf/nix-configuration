@@ -249,7 +249,7 @@ exec --no-startup-id killall xfce4-notifyd; dunst
 exec --no-startup-id feh --bg-scale ~/background 
 
 # guilded
-exec --no-startup-id i3-msg "exec cd ~/guilded && ~/guilded/run-guilded"
+# exec --no-startup-id i3-msg "exec cd ~/guilded && ~/guilded/run-guilded"
 # assign [class="Guilded"] 9
 
 # gaps
