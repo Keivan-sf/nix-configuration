@@ -41,6 +41,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  hardware.sane.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -66,7 +67,7 @@
   users.users.keive = {
     isNormalUser = true;
     description = "keive";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
     packages = with pkgs;
       [
         firefox
@@ -206,6 +207,8 @@
     age
     wine
     godot_4
+    autoconf271
+    automake115x
   ];
 
   programs.proxychains = {
