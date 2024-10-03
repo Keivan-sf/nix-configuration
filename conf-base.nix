@@ -210,6 +210,10 @@
     autoconf271
     automake115x
     nasm
+    libreoffice-qt
+    hunspell
+    hunspellDicts.uk_UA
+    hunspellDicts.fa_IR
   ];
 
   programs.proxychains = {
