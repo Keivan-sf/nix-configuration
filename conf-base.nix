@@ -209,6 +209,7 @@
     godot_4
     autoconf271
     automake115x
+    nasm
   ];
 
   programs.proxychains = {
