@@ -216,6 +216,7 @@
     hunspell
     hunspellDicts.uk_UA
     hunspellDicts.fa_IR
+    davinci-resolve
   ];
 
   programs.proxychains = {
