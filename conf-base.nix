@@ -80,8 +80,10 @@
   # flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # fonts
-  fonts.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    vazir-fonts
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
