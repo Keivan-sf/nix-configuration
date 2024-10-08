@@ -105,7 +105,6 @@
     neovim
     gh
     neovide
-    rustup
     libgcc
     gcc9
     mpv
@@ -217,6 +216,10 @@
     hunspellDicts.uk_UA
     hunspellDicts.fa_IR
     davinci-resolve
+    vscode-extensions.vadimcn.vscode-lldb
+    cargo
+    rustc
+    rust-analyzer
   ];
 
   programs.proxychains = {
