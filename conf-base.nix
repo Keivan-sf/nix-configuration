@@ -221,6 +221,7 @@
     rustc
     rust-analyzer
     libsForQt5.okular
+    nomacs
   ];
 
   programs.proxychains = {
