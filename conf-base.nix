@@ -220,6 +220,7 @@
     cargo
     rustc
     rust-analyzer
+    libsForQt5.okular
   ];
 
   programs.proxychains = {
