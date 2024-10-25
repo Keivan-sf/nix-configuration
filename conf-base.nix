@@ -83,6 +83,7 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     vazir-fonts
+    corefonts
   ];
 
   # List packages installed in system profile. To search, run:
@@ -211,7 +212,6 @@
     autoconf271
     automake115x
     nasm
-    libreoffice-qt
     hunspell
     hunspellDicts.uk_UA
     hunspellDicts.fa_IR
@@ -222,6 +222,9 @@
     rust-analyzer
     libsForQt5.okular
     nomacs
+    onlyoffice-bin_latest
+    unstable.libreoffice-qt6-fresh
+    wpsoffice
   ];
 
   programs.proxychains = {
