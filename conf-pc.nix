@@ -19,7 +19,6 @@
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.efiSupport = true;
 
-
   # home 
   home-manager.users.keive = { imports = [ ./home-pc.nix ]; };
 
@@ -29,4 +28,18 @@
   ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+      PasswordAuthentication = true;
+      AllowUsers = null;
+      UseDns = true;
+      X11Forwarding = false;
+      PermitRootLogin =
+        "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+    };
+  };
+
 }
