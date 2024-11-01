@@ -225,6 +225,9 @@
     onlyoffice-bin_latest
     unstable.libreoffice-qt6-fresh
     wpsoffice
+    virtualenv
+    poetry
+    niv
   ];
 
   programs.proxychains = {
