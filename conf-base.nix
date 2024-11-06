@@ -228,6 +228,7 @@
     virtualenv
     poetry
     niv
+    jupyter-all
   ];
 
   programs.proxychains = {
