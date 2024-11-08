@@ -67,7 +67,7 @@
   users.users.keive = {
     isNormalUser = true;
     description = "keive";
-    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "docker" ];
     packages = with pkgs;
       [
         firefox
@@ -250,6 +250,10 @@
 
   # virtualisation
   virtualisation.docker.enable = true;
+  virtualisation.docker.daemon.settings = {
+    insecure-registries = [ "https://docker.arvancloud.ir" ];
+    registry-mirrors = [ "https://docker.arvancloud.ir" ];
+  };
 
   environment.sessionVariables = rec { TERMINAL = "kitty"; };
 
