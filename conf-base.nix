@@ -229,6 +229,7 @@
     poetry
     niv
     jupyter-all
+    glibc
   ];
 
   programs.proxychains = {
