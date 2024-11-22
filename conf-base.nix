@@ -125,7 +125,7 @@
     python3
     v2raya
     unzip
-    # vscode
+    vscode
     kitty
     sing-box
     gnumake
@@ -230,6 +230,8 @@
     niv
     jupyter-all
     glibc
+    zip
+    neofetch
   ];
 
   programs.proxychains = {
