@@ -232,6 +232,7 @@
     glibc
     zip
     neofetch
+    pypy3
   ];
 
   programs.proxychains = {
