@@ -108,8 +108,8 @@
     libgcc
     gcc9
     mpv
-    gnome.gnome-disk-utility
-    gnome.gnome-sound-recorder
+    gnome-disk-utility
+    gnome-sound-recorder
     spotify
     xfce.xfce4-pulseaudio-plugin
     gscreenshot
@@ -136,7 +136,7 @@
     unstable.lua-language-server
     corepack_22
     nil
-    gnome.nautilus
+    nautilus
     feh
     picom
     ripgrep
