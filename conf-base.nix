@@ -214,7 +214,6 @@
     hunspell
     hunspellDicts.uk_UA
     hunspellDicts.fa_IR
-    davinci-resolve
     vscode-extensions.vadimcn.vscode-lldb
     cargo
     rustc
