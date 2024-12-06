@@ -12,7 +12,7 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -la";
-      nv = "neovide";
+      nv = "neovide --fork";
       xon = "nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null";
       #pupdate = "(" + builtins.readFile ./scripts/pupdate.sh + ")";
     };
