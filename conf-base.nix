@@ -232,6 +232,7 @@
     zip
     neofetch
     pypy3
+    alsa-utils
   ];
 
   programs.proxychains = {
