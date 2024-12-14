@@ -233,6 +233,7 @@
     neofetch
     pypy3
     alsa-utils
+    uv
   ];
 
   programs.proxychains = {

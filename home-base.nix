@@ -6,7 +6,10 @@
 
   programs.zsh = {
     enable = true;
-    initExtra = ''eval "$(zoxide init zsh)"'';
+    initExtra = ''
+      eval "$(zoxide init zsh)"
+      export PATH="/home/keive/.local/bin:$PATH"
+    '';
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
