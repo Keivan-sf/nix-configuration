@@ -234,6 +234,7 @@
     pypy3
     alsa-utils
     uv
+    electron
   ];
 
   programs.proxychains = {
