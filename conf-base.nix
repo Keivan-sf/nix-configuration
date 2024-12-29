@@ -235,6 +235,7 @@
     alsa-utils
     uv
     electron
+    libsForQt5.kcharselect
   ];
 
   programs.proxychains = {
