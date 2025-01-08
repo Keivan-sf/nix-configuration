@@ -17,7 +17,7 @@
       system = "x86_64-linux";
       specialArgs = inputs // {
         unstable = inputs.unstable.legacyPackages.${system};
-        secrets = import /etc/secrets.nix;
+        #secrets = import /etc/secrets.nix;
       };
     in {
       pc = nixpkgs.lib.nixosSystem {

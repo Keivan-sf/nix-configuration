@@ -7,17 +7,27 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration-pc.nix
+     /home/keive/nix-configuration/hardware-configuration.nix
+    #./hardware-configuration.nix
     ./conf-base.nix
   ];
 
+  fileSystems."/winlean" = {
+    device = "/dev/disk/by-uuid/01DAA516DB159820";
+    fsType = "ntfs";
+  };
+
   # Bootloader.
-  boot.loader.systemd-boot.enable = false;
+#  boot.loader.systemd-boot.enable = false;
+#  boot.loader.efi.canTouchEfiVariables = true;
+#  boot.loader.grub.enable = true;
+#  boot.loader.grub.device = "nodev";
+#  boot.loader.grub.useOSProber = true;
+#  boot.loader.grub.efiSupport = true;
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.efiSupport = true;
+
+
 
   # home 
   home-manager.users.keive = { imports = [ ./home-pc.nix ]; };

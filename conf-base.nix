@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, secrets, ... }:
+{ config, pkgs, unstable, ... }:
 
 {
   # home 
@@ -160,7 +160,7 @@
     nest-cli
     postgresql_16
     dbeaver-bin
-    discord
+    #discord
     direnv
     nodePackages."@prisma/language-server"
     nodePackages.prettier
@@ -236,7 +236,10 @@
     uv
     electron
     libsForQt5.kcharselect
+    docker-compose
   ];
+
+  programs.gamemode.enable = true;
 
   programs.proxychains = {
     enable = true;
@@ -281,6 +284,16 @@
     '';
     wantedBy = [ "multi-user.target" ];
     partOf = [ "multi-user.target" ];
+  };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall =
+      true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall =
+      true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall =
+      true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
   # Some programs need SUID wrappers, can be configured further or are
