@@ -237,6 +237,7 @@
     electron
     libsForQt5.kcharselect
     docker-compose
+    git
   ];
 
   programs.gamemode.enable = true;

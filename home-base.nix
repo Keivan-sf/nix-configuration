@@ -46,9 +46,9 @@
       package = pkgs.adw-gtk3;
     };
   };
-  programs.git = {
-    enable = true;
-    userName = "keivan-sf";
-    userEmail = "keyvan0082@gmail.com";
-  };
+  # programs.git = {
+  #   enable = true;
+  #   userName = "keivan-sf";
+  #   userEmail = "keyvan0082@gmail.com";
+  # };
 }
