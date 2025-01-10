@@ -238,6 +238,7 @@
     libsForQt5.kcharselect
     docker-compose
     git
+    wl-clipboard
   ];
 
   programs.gamemode.enable = true;
@@ -255,7 +256,7 @@
   };
 
   # services
-  services.picom.enable = true;
+  # services.picom.enable = true;
   services.expressvpn.enable = true;
 
   # virtualisation

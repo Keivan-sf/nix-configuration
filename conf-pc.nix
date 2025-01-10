@@ -7,7 +7,7 @@
 {
   imports = [
     # Include the results of the hardware scan.
-     /home/keive/nix-configuration/hardware-configuration.nix
+    /home/keive/nix-configuration/hardware-configuration.nix
     #./hardware-configuration.nix
     ./conf-base.nix
   ];
@@ -18,12 +18,12 @@
   };
 
   # Bootloader.
-#  boot.loader.systemd-boot.enable = false;
-#  boot.loader.efi.canTouchEfiVariables = true;
-#  boot.loader.grub.enable = true;
-#  boot.loader.grub.device = "nodev";
-#  boot.loader.grub.useOSProber = true;
-#  boot.loader.grub.efiSupport = true;
+  #  boot.loader.systemd-boot.enable = false;
+  #  boot.loader.efi.canTouchEfiVariables = true;
+  #  boot.loader.grub.enable = true;
+  #  boot.loader.grub.device = "nodev";
+  #  boot.loader.grub.useOSProber = true;
+  #  boot.loader.grub.efiSupport = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -35,10 +35,22 @@
   environment.systemPackages = with pkgs; [
     openrgb-with-all-plugins
     i2c-tools
+    waybar
+    wofi
+    hyprpaper
+    mako
   ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 
   services.openssh = {
     enable = true;
