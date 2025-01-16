@@ -1,8 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, self, ... }: {
   home.packages = with pkgs; [ adw-gtk3 materia-theme ];
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
   xdg.configFile."kitty/kitty.conf".source = ./dotfiles/kitty/kitty.conf;
+  xdg.configFile."picom/picom.conf".source = ./dotfiles/picom/picom.conf;
 
   programs.zsh = {
     enable = true;
