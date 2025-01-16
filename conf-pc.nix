@@ -12,6 +12,8 @@
     ./conf-base.nix
   ];
 
+  boot.kernelModules = [ "kvm-intel" "i2c-dev" ];
+
   fileSystems."/winlean" = {
     device = "/dev/disk/by-uuid/01DAA516DB159820";
     fsType = "ntfs";
