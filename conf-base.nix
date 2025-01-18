@@ -238,7 +238,6 @@
     libsForQt5.kcharselect
     docker-compose
     git
-    wl-clipboard
   ];
 
   programs.gamemode.enable = true;
