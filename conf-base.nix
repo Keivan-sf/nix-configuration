@@ -164,6 +164,8 @@
     direnv
     nodePackages."@prisma/language-server"
     nodePackages.prettier
+    prettierd
+    rustfmt
     openssl
     nodePackages.prisma
     nodePackages.dotenv-cli
@@ -183,6 +185,7 @@
     gdb
     nekoray
     stylua
+    black
     astyle
     obs-studio
     libsForQt5.kdenlive
