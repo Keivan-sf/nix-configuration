@@ -244,6 +244,14 @@
     libsForQt5.kcharselect
     docker-compose
     git
+    (wrapHelm kubernetes-helm {
+        plugins = with pkgs.kubernetes-helmPlugins; [
+          helm-secrets
+          helm-diff
+          helm-s3
+          helm-git
+        ];
+      }) 
   ];
 
   programs.gamemode.enable = true;
@@ -303,6 +311,13 @@
       true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  #k3s 
+  services.k3s.enable = true;
+  services.k3s.role = "server";
+  services.k3s.extraFlags = toString [
+    # "--debug" # Optionally add additional args to k3s
+  ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -317,7 +332,16 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 5001 5000 ];
+  networking.firewall.allowedTCPPorts = [ 
+   6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
+   2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
+   2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
+   5001 
+   5000
+  ];
+  networking.firewall.allowedUDPPorts = [
+    8472 # k3s, flannel: required if using multi-node for inter-node networking
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
