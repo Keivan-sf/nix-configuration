@@ -252,6 +252,7 @@
           helm-git
         ];
       }) 
+   wireshark
   ];
 
   programs.gamemode.enable = true;
