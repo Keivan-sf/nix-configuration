@@ -211,6 +211,9 @@
     pinentry-tty
     age
     wine
+	wine64
+    winetricks
+    lutris
     godot_4
     autoconf271
     automake115x
