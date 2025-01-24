@@ -210,8 +210,7 @@
     gnupg
     pinentry-tty
     age
-    wine
-	wine64
+	wineWowPackages.stableFull
     winetricks
     lutris
     godot_4
