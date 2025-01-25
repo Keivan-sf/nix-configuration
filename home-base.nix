@@ -18,8 +18,6 @@
       ll = "ls -la";
       nv = "neovide --fork";
       # There is a reason you piped it to the sh, There is an extra annoying log
-      xon = ''
-        echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'';
       #pupdate = "(" + builtins.readFile ./scripts/pupdate.sh + ")";
     };
     history.size = 10000;

@@ -252,6 +252,8 @@
         ];
       }) 
    wireshark
+   (writeShellScriptBin "xon" 
+    ''echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
   ];
 
   programs.gamemode.enable = true;
