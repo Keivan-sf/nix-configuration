@@ -165,7 +165,6 @@
     nodePackages."@prisma/language-server"
     nodePackages.prettier
     prettierd
-    rustfmt
     openssl
     nodePackages.prisma
     nodePackages.dotenv-cli
@@ -221,8 +220,9 @@
     hunspellDicts.uk_UA
     hunspellDicts.fa_IR
     vscode-extensions.vadimcn.vscode-lldb
-    cargo
     rustc
+    rustfmt
+	cargo
     rust-analyzer
     libsForQt5.okular
     nomacs
