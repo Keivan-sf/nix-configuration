@@ -160,7 +160,7 @@
     nest-cli
     postgresql_16
     dbeaver-bin
-    #discord
+    discord
     direnv
     nodePackages."@prisma/language-server"
     nodePackages.prettier
