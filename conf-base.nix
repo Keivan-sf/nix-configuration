@@ -31,9 +31,9 @@
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
-   services.xserver.displayManager.lightdm.enable = true;
-   services.xserver.desktopManager.xfce.enable = true;
-   services.xserver.windowManager.i3.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.windowManager.i3.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us,ir";
@@ -209,7 +209,7 @@
     gnupg
     pinentry-tty
     age
-	wineWowPackages.stableFull
+    wineWowPackages.stableFull
     winetricks
     lutris
     godot_4
@@ -222,7 +222,7 @@
     vscode-extensions.vadimcn.vscode-lldb
     rustc
     rustfmt
-	cargo
+    cargo
     rust-analyzer
     libsForQt5.okular
     nomacs
@@ -244,16 +244,16 @@
     docker-compose
     git
     (wrapHelm kubernetes-helm {
-        plugins = with pkgs.kubernetes-helmPlugins; [
-          helm-secrets
-          helm-diff
-          helm-s3
-          helm-git
-        ];
-      }) 
-   wireshark
-   (writeShellScriptBin "xon" 
-    ''echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
+      plugins = with pkgs.kubernetes-helmPlugins; [
+        helm-secrets
+        helm-diff
+        helm-s3
+        helm-git
+      ];
+    })
+    wireshark
+    (writeShellScriptBin "xon" ''
+      echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
   ];
 
   programs.gamemode.enable = true;
@@ -334,12 +334,12 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 
-   6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
-   2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
-   2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
-   5001 
-   5000
+  networking.firewall.allowedTCPPorts = [
+    6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
+    2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
+    2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
+    5001
+    5000
   ];
   networking.firewall.allowedUDPPorts = [
     8472 # k3s, flannel: required if using multi-node for inter-node networking
