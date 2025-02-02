@@ -256,6 +256,7 @@
       echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
     tailwindcss-language-server
     emmet-ls
+    jan
   ];
 
   programs.gamemode.enable = true;
