@@ -257,6 +257,7 @@
     tailwindcss-language-server
     emmet-ls
     jan
+    mkcert
   ];
 
   programs.gamemode.enable = true;
@@ -323,6 +324,29 @@
     # "--debug" # Optionally add additional args to k3s
   ];
 
+  environment.etc.genssl = { source = ./dotfiles/nginx/ssl; };
+
+  services.nginx = {
+    enable = true;
+    # appendHttpConfig = builtins.readFile ./dotfiles/nginx/default.conf;
+    virtualHosts."localhost" = {
+      forceSSL = true;
+      # enableACME = true; # Set to true if using Let's Encrypt
+      sslCertificate = "/etc/genssl/localhost.pem";
+      sslCertificateKey = "/etc/genssl/localhost-key.pem";
+
+      locations."/" = {
+        proxyPass = "http://localhost:1420"; # Change port if needed
+        extraConfig = ''
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto $scheme;
+        '';
+      };
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -338,6 +362,8 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
+    443
+    80
     6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
     2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
     2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
