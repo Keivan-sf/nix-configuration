@@ -258,6 +258,7 @@
     emmet-ls
     jan
     mkcert
+    appimage-run
   ];
 
   programs.gamemode.enable = true;
