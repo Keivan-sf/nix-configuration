@@ -286,7 +286,10 @@
     registry-mirrors = [ "https://docker.arvancloud.ir" ];
   };
 
-  environment.sessionVariables = rec { TERMINAL = "kitty"; };
+  environment.sessionVariables = rec {
+    TERMINAL = "kitty";
+    DEFAULT_BROWSER = "${pkgs.google-chrome}/bin/google-chrome";
+  };
 
   environment.shells = with pkgs; [ zsh ];
   programs.zsh.enable = true;
@@ -296,6 +299,9 @@
   xdg.mime.defaultApplications = {
     "inode/directory" = "nautilus";
     "video/x-matroska" = "mpv";
+    "x-scheme-handler/http" = "google-chrome.desktop";
+    "x-scheme-handler/https" = "google-chrome.desktop";
+    "text/html" = "google-chrome.desktop";
   };
 
   xdg.mime.enable = true;

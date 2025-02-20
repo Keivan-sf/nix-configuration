@@ -249,6 +249,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 # wallpaper
 exec --no-startup-id feh --bg-scale ~/background 
 
+for_window [class="awakened-poe-trade"] floating enable
 # guilded
 # exec --no-startup-id i3-msg "exec cd ~/guilded && ~/guilded/run-guilded"
 # assign [class="Guilded"] 9
