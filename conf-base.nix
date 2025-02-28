@@ -220,6 +220,7 @@
     hunspellDicts.uk_UA
     hunspellDicts.fa_IR
     vscode-extensions.vadimcn.vscode-lldb
+    rustup
     rustc
     rustfmt
     cargo
@@ -328,7 +329,7 @@
   #services.k3s.enable = true;
   #services.k3s.role = "server";
   #services.k3s.extraFlags = toString [
-    # "--debug" # Optionally add additional args to k3s
+  # "--debug" # Optionally add additional args to k3s
   #];
 
   environment.etc.genssl = { source = ./dotfiles/nginx/ssl; };
