@@ -221,10 +221,6 @@
     hunspellDicts.fa_IR
     vscode-extensions.vadimcn.vscode-lldb
     rustup
-    rustc
-    rustfmt
-    cargo
-    rust-analyzer
     libsForQt5.okular
     nomacs
     onlyoffice-bin_latest
