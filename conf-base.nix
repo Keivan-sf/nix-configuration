@@ -251,7 +251,7 @@
     wireshark
     (writeShellScriptBin "xon" ''
       echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
-    tailwindcss-language-server
+    unstable.tailwindcss-language-server
     emmet-ls
     jan
     mkcert
