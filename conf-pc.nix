@@ -50,6 +50,7 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+  hardware.graphics.enable = true;
 
   services.openssh = {
     enable = true;

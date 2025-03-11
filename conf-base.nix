@@ -256,6 +256,7 @@
     jan
     mkcert
     appimage-run
+    mesa-demos
   ];
 
   programs.gamemode.enable = true;
