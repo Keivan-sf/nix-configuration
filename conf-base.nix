@@ -257,6 +257,7 @@
     mkcert
     appimage-run
     mesa-demos
+    gimp-with-plugins
   ];
 
   programs.gamemode.enable = true;
