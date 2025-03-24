@@ -220,7 +220,10 @@
     hunspellDicts.uk_UA
     hunspellDicts.fa_IR
     vscode-extensions.vadimcn.vscode-lldb
-    rustup
+    unstable.cargo
+    unstable.rustc
+    unstable.rust-analyzer
+    unstable.rustfmt
     libsForQt5.okular
     nomacs
     onlyoffice-bin_latest
