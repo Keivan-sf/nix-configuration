@@ -262,6 +262,7 @@
     mesa-demos
     gimp-with-plugins
     playerctl
+    cmus
   ];
 
   programs.gamemode.enable = true;
