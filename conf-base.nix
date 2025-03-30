@@ -261,6 +261,7 @@
     appimage-run
     mesa-demos
     gimp-with-plugins
+    playerctl
   ];
 
   programs.gamemode.enable = true;
