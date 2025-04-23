@@ -9,7 +9,7 @@
     enable = true;
     initExtra = ''
       eval "$(zoxide init zsh)"
-      export PATH="/home/keive/.local/bin:$PATH"
+      export PATH="/home/keive/.local/bin:/home/keive/.cargo/bin:$PATH"
     '';
     enableCompletion = true;
     autosuggestion.enable = true;
