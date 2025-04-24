@@ -263,6 +263,8 @@
     gimp-with-plugins
     playerctl
     cmus
+    yt-dlp
+    motrix
   ];
 
   programs.gamemode.enable = true;
