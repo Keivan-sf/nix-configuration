@@ -284,7 +284,7 @@
 
   # services
   # services.picom.enable = true;
-  services.expressvpn.enable = true;
+  # services.expressvpn.enable = true;
 
   # virtualisation
   virtualisation.docker.enable = true;
