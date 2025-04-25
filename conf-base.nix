@@ -265,6 +265,7 @@
     cmus
     yt-dlp
     motrix
+    p7zip
   ];
 
   programs.gamemode.enable = true;
