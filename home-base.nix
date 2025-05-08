@@ -5,6 +5,7 @@
   xdg.configFile."kitty/kitty.conf".source = ./dotfiles/kitty/kitty.conf;
   xdg.configFile."picom/picom.conf".source = ./dotfiles/picom/picom.conf;
 
+  xdg.configFile."i3/i3-music-control".source = ./dotfiles/i3/i3-music-control;
   programs.zsh = {
     enable = true;
     initExtra = ''

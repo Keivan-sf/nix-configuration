@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+ACTION=$1
+TMP_IMG="/tmp/album_art.jpg"
+DISPLAY_INFO=false
+# Perform the action
+case "$ACTION" in
+  toggle) playerctl play-pause ;;
+  next) playerctl next && DISPLAY_INFO=true ;;
+  prev) playerctl previous && DISPLAY_INFO=true ;;
+  info) DISPLAY_INFO=true ;;
+  *) exit 1 ;;
+esac
+
+if [[ $DISPLAY_INFO = false ]]; then 
+  exit 1
+fi
+
+# If the action is not info it means we are getting the meta data fresh, which is sometimes not available for a little time using online players
+SLEEP_TIME=0.1
+if [[ $ACTION = "info" ]]; then
+  SLEEP_TIME=0
+fi
+
+sleep $SLEEP_TIME 
+
+# Get metadata
+TITLE=$(playerctl metadata title)
+ARTIST=$(playerctl metadata artist)
+ALBUM=$(playerctl metadata album)
+COVER_URL=$(playerctl metadata mpris:artUrl)
+
+# Download cover if available
+if [[ "$COVER_URL" =~ ^http ]]; then
+    wget -q "$COVER_URL" -O "$TMP_IMG"
+    ICON_OPTION="--icon=$tmp_img"
+else
+    ICON_OPTION="--icon=$COVER_URL"
+fi
+
+# Send notification
+if [[ -n "$ALBUM" ]]; then
+  notify-send  "$TITLE" "$ARTIST • $ALBUM" $ICON_OPTION -t 2000
+else
+  notify-send  "$TITLE" "$ARTIST" $ICON_OPTION -t 2000
+fi
