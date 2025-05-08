@@ -266,6 +266,7 @@
     yt-dlp
     motrix
     p7zip
+    musescore
   ];
 
   programs.gamemode.enable = true;
