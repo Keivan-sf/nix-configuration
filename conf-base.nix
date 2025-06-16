@@ -81,7 +81,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    fira-code
     vazir-fonts
     corefonts
   ];
@@ -162,7 +162,7 @@
     dbeaver-bin
     discord
     direnv
-    nodePackages."@prisma/language-server"
+    # nodePackages."@prisma/language-server"
     nodePackages.prettier
     prettierd
     openssl
