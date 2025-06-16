@@ -80,11 +80,7 @@
   # flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # fonts
-  fonts.packages = with pkgs; [
-    fira-code
-    vazir-fonts
-    corefonts
-  ];
+  fonts.packages = with pkgs; [ nerd-fonts.fira-code vazir-fonts corefonts ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
