@@ -95,7 +95,6 @@
     unstable.telegram-desktop
     btop
     libnotify
-    gscreenshot
     pulseaudioFull
     dunst
     killall

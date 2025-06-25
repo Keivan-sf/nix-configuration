@@ -240,7 +240,7 @@ bar {
 
 
 # screen shot
-bindsym F12 exec --no-startup-id gscreenshot -cs 
+bindsym F12 exec --no-startup-id gscreenshot-cli -cs 
 
 
 #dictionary

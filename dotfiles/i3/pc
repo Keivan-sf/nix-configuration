@@ -230,7 +230,7 @@ bindsym F10 exec --no-startup-id bash $i3configpath/i3-music-control next
 
 
 # screen shot
-bindsym F12 exec --no-startup-id gscreenshot -cs 
+bindsym F12 exec --no-startup-id gscreenshot-cli -cs 
 
 
 #dictionary
