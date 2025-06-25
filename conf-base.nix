@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, ... }:
+{ config, pkgs, unstable, pkgs24, ... }:
 
 {
   # home 
@@ -178,7 +178,8 @@
     wireguard-tools
     tree
     gdb
-    nekoray
+    # nekoray
+    pkgs24.nekoray
     stylua
     black
     astyle
@@ -263,9 +264,15 @@
     motrix
     p7zip
     musescore
+    openvpn3
+    openvpn
+    inetutils
+    dig
+    xray
   ];
 
   programs.gamemode.enable = true;
+  programs.nix-ld.enable = true;
 
   programs.proxychains = {
     enable = true;
@@ -282,6 +289,7 @@
   # services
   # services.picom.enable = true;
   # services.expressvpn.enable = true;
+  programs.openvpn3.enable = true;
 
   # virtualisation
   virtualisation.docker.enable = true;
@@ -379,6 +387,7 @@
     2081
     20170
     20171
+    5574 # v2ray testers
     6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
     2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
     2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration

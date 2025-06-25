@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs24.url = "github:NixOS/nixpkgs/nixos-24.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
 
@@ -17,6 +18,7 @@
       system = "x86_64-linux";
       specialArgs = inputs // {
         unstable = inputs.unstable.legacyPackages.${system};
+        pkgs24 = inputs.unstable.legacyPackages.${system};
         #secrets = import /etc/secrets.nix;
       };
     in {
