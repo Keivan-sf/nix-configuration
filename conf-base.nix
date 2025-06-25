@@ -280,7 +280,7 @@
         enable = true;
         type = "socks5";
         host = "127.0.0.1";
-        port = 20170;
+        port = 2080;
       };
     };
   };
@@ -317,13 +317,13 @@
 
   xdg.mime.enable = true;
 
-  systemd.services.my-v2raya = {
-    script = ''
-      "${pkgs.v2raya}/bin/v2rayA"
-    '';
-    wantedBy = [ "multi-user.target" ];
-    partOf = [ "multi-user.target" ];
-  };
+  # systemd.services.my-v2raya = {
+  #   script = ''
+  #     "${pkgs.v2raya}/bin/v2rayA"
+  #   '';
+  #   wantedBy = [ "multi-user.target" ];
+  #   partOf = [ "multi-user.target" ];
+  # };
 
   programs.steam = {
     enable = true;
