@@ -5,6 +5,7 @@
 { config, pkgs, unstable, pkgs24, ... }:
 
 {
+  imports = [ ./pkgs/custom-pkgs.nix ];
   # home 
   home-manager.backupFileExtension = "backup";
   home-manager.useGlobalPkgs = true;
