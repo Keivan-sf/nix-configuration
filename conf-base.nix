@@ -114,7 +114,6 @@
     wordnet
     unstable.piper-tts
     pavucontrol
-    gabutdm
     woeusb
     go
     unstable.nodejs_22
