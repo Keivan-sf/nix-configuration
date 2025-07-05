@@ -2,12 +2,12 @@
 
 pkgs.stdenv.mkDerivation rec {
   pname = "hiddify";
-  version = "2.0.5";
+  version = "2.5.7";
 
   src = pkgs.fetchurl {
     url =
-      "https://github.com/hiddify/hiddify-app/releases/download/v2.0.5/Hiddify-Debian-x64.deb";
-    sha256 = "sha256-dGvHrP6i9B9p2XnI3umchJF0ei7xkH9aQnHRcIhEHLM=";
+      "https://github.com/hiddify/hiddify-next/releases/download/v2.5.7/Hiddify-Debian-x64.deb";
+    sha256 = "sha256-owknd1lCptl/o21mO2ruwk/e6vwAcWx20iAhXmtwWa4=";
   };
 
   nativeBuildInputs = [ pkgs.dpkg pkgs.patchelf pkgs.makeWrapper ];
