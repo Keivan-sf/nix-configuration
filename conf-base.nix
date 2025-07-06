@@ -268,6 +268,7 @@
     inetutils
     dig
     xray
+    zellij
   ];
 
   programs.gamemode.enable = true;
