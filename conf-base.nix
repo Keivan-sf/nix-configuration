@@ -268,6 +268,7 @@
     inetutils
     dig
     xray
+    llama-cpp
     zellij
   ];
 
