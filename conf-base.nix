@@ -270,6 +270,7 @@
     xray
     llama-cpp
     zellij
+    amberol
   ];
 
   programs.gamemode.enable = true;
