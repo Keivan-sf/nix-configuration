@@ -271,6 +271,7 @@
     llama-cpp
     zellij
     amberol
+    v2rayn
   ];
 
   programs.gamemode.enable = true;
@@ -303,6 +304,7 @@
   environment.sessionVariables = rec {
     TERMINAL = "kitty";
     DEFAULT_BROWSER = "${pkgs.google-chrome}/bin/google-chrome";
+    EDITOR = "${pkgs.neovim}/bin/nvim";
   };
 
   environment.shells = with pkgs; [ zsh ];
