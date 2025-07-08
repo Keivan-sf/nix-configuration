@@ -1,0 +1,21 @@
+layout {
+		tab name="editor" {
+				pane {
+					command "zsh"
+					args "-c" "nvim .;zsh"
+				}
+			
+				pane size=1 borderless=true {
+						plugin location="zellij:compact-bar"
+				}
+		}
+		tab name="terminal" split_direction="horizontal" {
+				pane split_direction="vertical" {
+						pane
+						pane
+				}
+				pane size=1 borderless=true {
+						plugin location="zellij:compact-bar"
+				}
+		}
+}

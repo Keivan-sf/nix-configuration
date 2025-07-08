@@ -2,10 +2,12 @@
   home.packages = with pkgs; [ adw-gtk3 materia-theme ];
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
+
   xdg.configFile."kitty/kitty.conf".source = ./dotfiles/kitty/kitty.conf;
   xdg.configFile."picom/picom.conf".source = ./dotfiles/picom/picom.conf;
-
+  xdg.configFile."zellij/dev-layout.kdl".source = ./dotfiles/zellij/dev-layout.kdl;
   xdg.configFile."i3/i3-music-control".source = ./dotfiles/i3/i3-music-control;
+
   programs.zsh = {
     enable = true;
     initExtra = ''
@@ -18,8 +20,7 @@
     shellAliases = {
       ll = "ls -la";
       nv = "neovide --fork";
-      # There is a reason you piped it to the sh, There is an extra annoying log
-      #pupdate = "(" + builtins.readFile ./scripts/pupdate.sh + ")";
+      zv = "zellij -l ~/.config/zellij/dev-layout.kdl";
     };
     history.size = 10000;
     oh-my-zsh = {
