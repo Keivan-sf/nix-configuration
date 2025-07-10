@@ -272,6 +272,7 @@
     zellij
     amberol
     v2rayn
+    nix-serve-ng
   ];
 
   programs.gamemode.enable = true;
