@@ -273,6 +273,9 @@
     amberol
     v2rayn
     nix-serve-ng
+    jq
+    node2nix
+    iperf
   ];
 
   programs.gamemode.enable = true;
