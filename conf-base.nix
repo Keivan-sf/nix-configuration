@@ -276,6 +276,10 @@
     jq
     node2nix
     iperf
+    go
+    gopls
+    vivaldi
+    lsof
   ];
 
   programs.gamemode.enable = true;
@@ -402,6 +406,7 @@
     5001
     5000
     3000 # development
+    12334 # hiddify
   ];
   networking.firewall.allowedUDPPorts = [
     8472 # k3s, flannel: required if using multi-node for inter-node networking
