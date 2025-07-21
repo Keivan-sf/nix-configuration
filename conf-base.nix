@@ -280,6 +280,7 @@
     gopls
     vivaldi
     lsof
+    file
   ];
 
   programs.gamemode.enable = true;
@@ -326,6 +327,7 @@
     "x-scheme-handler/http" = "google-chrome.desktop";
     "x-scheme-handler/https" = "google-chrome.desktop";
     "text/html" = "google-chrome.desktop";
+    "text/plain" = "neovide";
   };
 
   xdg.mime.enable = true;
