@@ -46,7 +46,7 @@
   hardware.sane.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -141,7 +141,7 @@
     nodePackages.typescript-language-server
     nodePackages.svelte-language-server
     insomnia
-    nixfmt
+    nixfmt-classic
     proxychains
     vscode-langservers-extracted
     python311Packages.python-lsp-server

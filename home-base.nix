@@ -1,6 +1,7 @@
 { pkgs, self, ... }: {
   home.packages = with pkgs; [ adw-gtk3 materia-theme ];
   home.stateVersion = "22.05";
+  home.enableNixpkgsReleaseCheck = false;
   programs.home-manager.enable = true;
 
   xdg.configFile."kitty/kitty.conf".source = ./dotfiles/kitty/kitty.conf;
@@ -10,7 +11,7 @@
 
   programs.zsh = {
     enable = true;
-    initExtra = ''
+    initContent = ''
       eval "$(zoxide init zsh)"
       export PATH="/home/keive/.local/bin:/home/keive/.cargo/bin:$PATH"
     '';
