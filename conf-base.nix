@@ -109,7 +109,7 @@
     gnome-sound-recorder
     spotify
     xfce.xfce4-pulseaudio-plugin
-    gscreenshot
+    pkgs24.gscreenshot
     xclip
     wordnet
     unstable.piper-tts
