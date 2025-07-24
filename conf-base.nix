@@ -281,6 +281,7 @@
     vivaldi
     lsof
     file
+    nix-index
   ];
 
   programs.gamemode.enable = true;
