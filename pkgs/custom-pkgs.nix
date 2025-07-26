@@ -5,6 +5,6 @@ let
   zira-code =
     pkgs.callPackage ./fonts/zira-code/zira-code.nix { inherit (pkgs) ; };
 in {
-  environment.systemPackages = [ hiddify ];
+  # environment.systemPackages = [ hiddify ];
   fonts.packages = [ zira-code ];
 }

@@ -20,6 +20,7 @@ pkgs.stdenv.mkDerivation rec {
 
     mkdir -p $out/bin
     cp ./tmp/usr/share/hiddify/hiddify $out/bin/
+    cp ./tmp/usr/share/hiddify/HiddifyCli $out/bin/
 
     mkdir -p $out/bin/data
     cp -r ./tmp/usr/share/hiddify/data/* $out/bin/data/

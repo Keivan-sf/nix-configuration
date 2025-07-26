@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, pkgs24, ... }:
+{ config, pkgs, unstable, pkgs24, pkgs23, ... }:
 
 {
   imports = [ ./pkgs/custom-pkgs.nix ];
@@ -122,7 +122,6 @@
     unzip
     vscode
     kitty
-    sing-box
     gnumake
     deno
     #rocmPackages.llvm.clang
@@ -282,6 +281,8 @@
     lsof
     file
     nix-index
+    hiddify-app
+    pkgs23.sing-box
   ];
 
   programs.gamemode.enable = true;
