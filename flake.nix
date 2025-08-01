@@ -7,6 +7,7 @@
     nixpkgs23.url = "github:NixOS/nixpkgs/nixos-23.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -19,21 +20,32 @@
       system = "x86_64-linux";
       specialArgs = inputs // {
         # unstable = inputs.unstable.legacyPackages.${system};
-        unstable = import inputs.unstable {inherit system; config.allowUnfree = true; };
+        unstable = import inputs.unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
         pkgs24 = inputs.nixpkgs24.legacyPackages.${system};
         pkgs23 = inputs.nixpkgs23.legacyPackages.${system};
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
         #secrets = import /etc/secrets.nix;
       };
     in {
       pc = nixpkgs.lib.nixosSystem {
         specialArgs = specialArgs;
-        modules = [ ./conf-pc.nix inputs.home-manager.nixosModules.default ];
+        modules = [
+          ./conf-pc.nix
+          inputs.home-manager.nixosModules.default
+          inputs.spicetify-nix.nixosModules.spicetify
+        ];
       };
 
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = specialArgs;
-        modules =
-          [ ./conf-laptop.nix inputs.home-manager.nixosModules.default ];
+        modules = [
+          ./conf-laptop.nix
+          inputs.home-manager.nixosModules.default
+          inputs.spicetify-nix.nixosModules.spicetify
+        ];
       };
 
     };

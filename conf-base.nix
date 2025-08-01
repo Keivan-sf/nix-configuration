@@ -176,8 +176,8 @@
     wireguard-tools
     tree
     gdb
-    # nekoray
-    pkgs24.nekoray
+    nekoray
+    # pkgs24.nekoray
     stylua
     black
     astyle
@@ -283,6 +283,7 @@
     nix-index
     hiddify-app
     pkgs23.sing-box
+    # spotify
   ];
 
   programs.gamemode.enable = true;
