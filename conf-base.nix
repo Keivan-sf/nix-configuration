@@ -284,6 +284,7 @@
     hiddify-app
     pkgs23.sing-box
     # spotify
+    bicon
   ];
 
   programs.gamemode.enable = true;
