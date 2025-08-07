@@ -423,7 +423,8 @@
   # dns
   # networking.nameservers = [ "178.22.122.100" "185.51.200.2" ]; # shecan
   # networking.nameservers = [ "172.29.0.100" "172.29.2.100" ]; # hostiran
-  networking.nameservers = [ "10.202.10.202" "10.202.10.102" ]; # 403
+  # networking.nameservers = [ "10.202.10.202" "10.202.10.102" ]; # 403
+  networking.nameservers = [ "8.8.8.8" ]; # 403
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
