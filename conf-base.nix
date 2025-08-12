@@ -285,6 +285,7 @@
     pkgs23.sing-box
     # spotify
     bicon
+    tcpdump
   ];
 
   programs.gamemode.enable = true;
