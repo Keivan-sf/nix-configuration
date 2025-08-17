@@ -81,11 +81,7 @@
   # flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # fonts
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-    vazir-fonts
-    corefonts
-  ];
+  fonts.packages = with pkgs; [ nerd-fonts.fira-code vazir-fonts corefonts ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -291,6 +287,9 @@
     bicon
     tcpdump
     eww
+    buf
+    go-protobuf
+    protoc-gen-connect-go
   ];
 
   programs.gamemode.enable = true;
