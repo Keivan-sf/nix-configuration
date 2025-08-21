@@ -263,7 +263,10 @@ exec --no-startup-id killall xfce4-notifyd; dunst
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 
 # wallpaper
-exec --no-startup-id feh --bg-scale ~/background 
+# exec --no-startup-id feh --bg-scale ~/background 
 
 # gaps
 gaps inner 10px
+
+# bar
+exec_always --no-startup-id "eww open bar"

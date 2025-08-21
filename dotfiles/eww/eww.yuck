@@ -1,0 +1,144 @@
+(include "./network.yuck")
+
+(defwindow bar :monitor 0
+           :geometry (geometry :x "0px"
+                               :y "0px"
+                               :width "100%"
+                               :height "30px"
+                               :anchor "bottom center")
+           :stacking "fg"
+           :reserve (struts :distance "30px" :side "bottom")
+           :windowtype "dock"
+           :wm-ignore false  
+  (barcontent))
+  
+(defwidget barcontent []
+  (centerbox :orientation "h"
+   (left) (greeter :text "btn" :name "keive") (right)))
+
+
+(defwidget greeter [?text name]
+  (box :orientation "h" 
+    (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
+      "well hello there!")))
+
+(defwidget left []
+  (box :orientation "horizontal"
+       :space-evenly false
+    (workspaces)))
+
+(defwidget right []
+  (box :orientation "h" :space-evenly false :halign "end"
+    (cpu-usage)
+    (storage-usage)
+    (memory-usage)
+    (volume)
+    (systray :class "tray" :spacing 10 :orientation "h" :space-evenly false :icon-size 15 :prepend-new true)
+    (timewin)
+    (network)))
+
+(defwidget timewin [] (box :class "time" :geometry (geometry :height "30px") :orientation  "h" :space-evenly false "${time}"))
+       
+
+(defpoll time :interval "1s"
+              :run-while true
+  `date +"%a %d/%m %H:%M"`)
+
+(deflisten workspace "bash ~/.config/eww/scripts/worskapces.sh")
+(defwidget workspaces []
+  (literal :class "workspaces" :geometry (geometry :height "30px") :content "${workspace}"))
+
+
+(deflisten vol-level "bash ~/.config/eww/scripts/volume-listen.sh")
+
+(defwidget volume [] (box :class "volume" :space-evenly false (vol)))
+
+(defwidget vol []
+  (eventbox
+    :onscroll "sh -c 'case \"{}\" in up) pactl set-sink-volume @DEFAULT_SINK@ +5% ;; down) pactl set-sink-volume @DEFAULT_SINK@ -5% ;; esac'"
+    (box (image :class "imgvol" :image-width "20" :path "./images/vol0.svg")(label :text "${vol-level}"))))
+
+
+
+
+(defpoll cpu  :interval "1s"
+              :run-while true
+  `bash ~/.config/eww/scripts/cpu-usage.sh`)
+
+
+(defwidget cpu-usage [] (box 
+                          :class { cpu > 90 ? "cpu red-bg" : cpu > 70 ? "cpu yellow-bg" : "cpu"}
+                          :geometry (geometry :height "30px") 
+                          :orientation  "h" 
+                          :space-evenly false 
+                          (cpu-icon :usage cpu)(cpu-number :usage cpu)))
+
+(defwidget cpu-icon [usage] (box 
+                              :class { usage > 70 ? "white-color" : "cpu-icon"}
+                              :geometry (geometry :height "30px") 
+                              :orientation  "h" 
+                              :space-evenly false 
+                              " "))
+
+(defwidget cpu-number [usage] (box 
+                                :class { usage > 70 ? "white-color" : ""}
+                                :geometry (geometry :height "30px") 
+                                :orientation  "h" 
+                                :space-evenly false 
+                                "${usage}%"))
+
+(defpoll memory  :interval "1s"
+              :run-while true
+  `bash ~/.config/eww/scripts/memory-usage.sh`)
+
+(defpoll memory-used-percentage  :interval "1s"
+              :run-while true
+  `bash ~/.config/eww/scripts/memory-usage-percentage.sh`)
+
+
+(defwidget memory-usage [] (box 
+                             :class { memory-used-percentage > 90 ? "memory red-bg" : memory-used-percentage > 70 ? "memory yellow-bg" : "memory"}
+                             :geometry (geometry :height "30px") 
+                             :orientation  "h" 
+                             :space-evenly false 
+                             (memory-icon :usage memory-used-percentage)(memory-number :usage memory-used-percentage)))
+
+(defwidget memory-icon [usage] (box 
+                                 :class { usage > 70 ? "white-color" : "memory-icon"}
+                                 :geometry (geometry :height "30px") 
+                                 :orientation  "h" 
+                                 :space-evenly false 
+                                 " "))
+
+(defwidget memory-number [usage] (box 
+                                   :class { usage > 70 ? "white-color" : ""}
+                                   :geometry (geometry :height "30px") 
+                                   :orientation  "h" 
+                                   :space-evenly false 
+                                   "${memory} GiB"))
+
+
+(defpoll storage  :interval "10s"
+              :run-while true
+  `bash ~/.config/eww/scripts/storage-usage.sh`)
+
+(defwidget storage-usage [] (box
+                          :class { storage < 10 ? "storage red-bg" : storage < 80 ? "storage yellow-bg" : "storage"}
+                          :geometry (geometry :height "30px") 
+                          :orientation  "h" 
+                          :space-evenly false 
+                          (storage-icon :usage storage)(storage-number :usage storage)))
+
+(defwidget storage-icon [usage] (box 
+                              :class { usage < 80 ? "white-color" : "storage-icon"}
+                              :geometry (geometry :height "30px") 
+                              :orientation  "h" 
+                              :space-evenly false 
+                              " "))
+
+(defwidget storage-number [usage] (box 
+                                    :class { usage < 80 ? "white-color" : ""}
+                                    :geometry (geometry :height "30px") 
+                                    :orientation  "h" 
+                                    :space-evenly false 
+                                    "${usage} GB"))

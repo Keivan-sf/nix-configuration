@@ -1,0 +1,30 @@
+(defpoll connection_status :interval "1s"
+              :run-while true
+  `bash ~/.config/eww/scripts/network.sh --is-connected`)
+
+(defpoll network_name :interval "1s"
+  :run-while true
+  `bash ~/.config/eww/scripts/network.sh --name`)
+
+(defwidget network [] 
+  (box 
+      :class { connection_status > 0 ? "network-box blue-bg" : "network-box red-bg" }
+     (eventbox
+       :onclick "notify-send -h string:bgcolor:#000 \"${network_name}\""
+     (box 
+        :orientation  "h" 
+        :space-evenly false 
+       ; (box :class "network-name" "${network_name} ")
+       (image
+         :class "imgwifi"
+         :image-width 17
+         :path { connection_status > 1 ? "./images/wifi-on.svg" : "./images/wifi-on.svg"})
+       )
+       )))
+
+
+
+;; (defwidget vol []
+;;   (eventbox
+;;     :onscroll "sh -c 'case \"{}\" in up) pactl set-sink-volume @DEFAULT_SINK@ +5% ;; down) pactl set-sink-volume @DEFAULT_SINK@ -5% ;; esac'"
+;;     (box (image :class "imgvol" :image-width "20" :path "./images/vol0.svg")(label :text "${vol-level}"))))
