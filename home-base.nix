@@ -3,13 +3,14 @@
   home.stateVersion = "22.05";
   home.enableNixpkgsReleaseCheck = false;
   programs.home-manager.enable = true;
-
+  
   xdg.configFile."kitty/kitty.conf".source = ./dotfiles/kitty/kitty.conf;
   xdg.configFile."picom/picom.conf".source = ./dotfiles/picom/picom.conf;
   xdg.configFile."zellij/dev-layout.kdl".source =
     ./dotfiles/zellij/dev-layout.kdl;
   xdg.configFile."zellij/config.kdl".source = ./dotfiles/zellij/config.kdl;
   xdg.configFile."i3/i3-music-control".source = ./dotfiles/i3/i3-music-control;
+  xdg.configFile."nvim".source = ./dotfiles/nvim;
 
   programs.zsh = {
     enable = true;

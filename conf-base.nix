@@ -288,8 +288,15 @@
     tcpdump
     eww
     buf
-    go-protobuf
     protoc-gen-connect-go
+    xwinwrap
+    xdotool
+    cmake
+    qemu
+    wmctrl
+    xdo
+    xorg.xwininfo
+    devilspie2
   ];
 
   programs.gamemode.enable = true;
