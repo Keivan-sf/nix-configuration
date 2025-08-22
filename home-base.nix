@@ -11,6 +11,8 @@
   xdg.configFile."zellij/config.kdl".source = ./dotfiles/zellij/config.kdl;
   xdg.configFile."i3/i3-music-control".source = ./dotfiles/i3/i3-music-control;
   xdg.configFile."i3/bgutils".source = ./dotfiles/i3/bgutils;
+  xdg.configFile."i3/kitty_scratchpad.sh".source =
+    ./dotfiles/i3/kitty_scratchpad.sh;
   xdg.configFile."nvim".source = ./dotfiles/nvim;
   xdg.configFile."eww".source = ./dotfiles/eww;
 

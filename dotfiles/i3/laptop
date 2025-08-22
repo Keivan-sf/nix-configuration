@@ -270,3 +270,8 @@ gaps inner 10px
 
 # bar
 exec_always --no-startup-id "eww open bar"
+
+#scratchpad
+for_window [instance="scratchpad"] floating enable, border pixel 0, move position center, resize set 800 400, move scratchpad
+
+bindsym $mod+shift+Return exec --no-startup-id bash ~/.config/i3/kitty_scratchpad.sh
