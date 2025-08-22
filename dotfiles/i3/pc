@@ -254,6 +254,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 
 # wallpaper
 # exec --no-startup-id feh --bg-scale ~/background 
+exec --no-startup-id webwp --uri "file://$(realpath ~/.config/i3/bgutils/index.html)"  
 
 for_window [class="awakened-poe-trade"] floating enable
 # guilded
