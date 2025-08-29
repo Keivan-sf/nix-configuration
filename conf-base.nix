@@ -297,6 +297,7 @@
     xdo
     xorg.xwininfo
     devilspie2
+    joplin-desktop
   ];
 
   programs.gamemode.enable = true;
@@ -426,9 +427,16 @@
     3000 # development
     12334 # hiddify
   ];
+
   networking.firewall.allowedUDPPorts = [
     8472 # k3s, flannel: required if using multi-node for inter-node networking
   ];
+
+  networking.extraHosts = ''
+    127.0.0.1 excali
+    ::1 excali
+  '';
+
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -436,7 +444,7 @@
   # networking.nameservers = [ "178.22.122.100" "185.51.200.2" ]; # shecan
   # networking.nameservers = [ "172.29.0.100" "172.29.2.100" ]; # hostiran
   # networking.nameservers = [ "10.202.10.202" "10.202.10.102" ]; # 403
-  networking.nameservers = [ "8.8.8.8" ]; # 403
+  networking.nameservers = [ "8.8.8.8" ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
