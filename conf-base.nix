@@ -298,6 +298,7 @@
     xorg.xwininfo
     devilspie2
     joplin-desktop
+    revanced-cli
   ];
 
   programs.gamemode.enable = true;
@@ -310,7 +311,7 @@
         enable = true;
         type = "socks5";
         host = "127.0.0.1";
-        port = 12334;
+        port = 3090;
       };
     };
   };
