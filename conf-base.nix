@@ -92,7 +92,6 @@
     lazygit
     google-chrome
     i3
-    qv2ray
     unstable.telegram-desktop
     btop
     libnotify
@@ -114,11 +113,9 @@
     wordnet
     unstable.piper-tts
     pavucontrol
-    woeusb
     go
     unstable.nodejs_22
     python3
-    v2raya
     unzip
     vscode
     kitty
@@ -148,15 +145,11 @@
     python3.pkgs.pip
     pyright
     zoxide
-    libsForQt5.kget
-    expressvpn
     fzf
     nest-cli
-    postgresql_16
     dbeaver-bin
     discord
     direnv
-    # nodePackages."@prisma/language-server"
     nodePackages.prettier
     prettierd
     openssl
@@ -166,13 +159,11 @@
     bun
     lzip
     dpkg
-    pgadmin4
     csharp-ls
     dotnet-sdk_8
     ncompress
     codespell
     nodePackages.cspell
-    weston
     wireguard-tools
     tree
     gdb
@@ -186,21 +177,7 @@
     unrar
     tor-browser
     calibre
-    ### libs used for guilded
-    steam-run
-    autoPatchelfHook
     gtk3
-    nss # xorg.libXScrnSaver
-    xorg.libXtst
-    xdg-utils
-    at-spi2-atk
-    libuuid
-    libsecret
-    ffmpeg-full
-    ffmpeg-headless
-    vivaldi-ffmpeg-codecs
-    alsa-lib
-    ### end libs used for guilded
     gnupg
     pinentry-tty
     age
@@ -227,25 +204,14 @@
     virtualenv
     poetry
     niv
-    jupyter-all
     glibc
     zip
     neofetch
-    pypy3
     alsa-utils
-    uv
     electron
     libsForQt5.kcharselect
     docker-compose
     git
-    (wrapHelm kubernetes-helm {
-      plugins = with pkgs.kubernetes-helmPlugins; [
-        helm-secrets
-        helm-diff
-        helm-s3
-        helm-git
-      ];
-    })
     wireshark
     (writeShellScriptBin "xon" ''
       echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
@@ -259,7 +225,6 @@
     playerctl
     cmus
     yt-dlp
-    motrix
     p7zip
     musescore
     openvpn3
@@ -296,9 +261,9 @@
     wmctrl
     xdo
     xorg.xwininfo
-    devilspie2
     joplin-desktop
     revanced-cli
+    openmw
   ];
 
   programs.gamemode.enable = true;
