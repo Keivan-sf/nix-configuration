@@ -10,6 +10,8 @@
   home-manager.backupFileExtension = "backup";
   home-manager.useGlobalPkgs = true;
 
+  nixpkgs.config.permittedInsecurePackages = [ "mbedtls-2.28.10" ];
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -184,7 +186,6 @@
     wineWowPackages.stableFull
     winetricks
     lutris
-    godot_4
     autoconf271
     automake115x
     nasm
@@ -202,8 +203,6 @@
     unstable.libreoffice-qt6-fresh
     wpsoffice
     virtualenv
-    poetry
-    niv
     glibc
     zip
     neofetch
@@ -227,8 +226,6 @@
     yt-dlp
     p7zip
     musescore
-    openvpn3
-    openvpn
     inetutils
     dig
     xray
@@ -263,7 +260,6 @@
     xorg.xwininfo
     joplin-desktop
     revanced-cli
-    openmw
   ];
 
   programs.gamemode.enable = true;
