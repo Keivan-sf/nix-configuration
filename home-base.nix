@@ -20,7 +20,7 @@
     enable = true;
     initContent = ''
       eval "$(zoxide init zsh)"
-      export PATH="/home/keive/.local/bin:/home/keive/.cargo/bin:$PATH"
+      export PATH="/home/keive/.local/bin:/home/keive/.cargo/bin:/home/keive/go/bin:$PATH"
     '';
     enableCompletion = true;
     autosuggestion.enable = true;

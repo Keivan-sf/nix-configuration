@@ -260,6 +260,9 @@
     xorg.xwininfo
     joplin-desktop
     revanced-cli
+
+    # wils deps
+    webkitgtk_4_0
   ];
 
   programs.gamemode.enable = true;
