@@ -260,9 +260,10 @@
     xorg.xwininfo
     joplin-desktop
     revanced-cli
-    # wils deps
+    # wails deps
     webkitgtk_4_0
     obsidian
+    ffmpeg-full
   ];
 
   programs.gamemode.enable = true;
