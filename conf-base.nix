@@ -264,6 +264,8 @@
     webkitgtk_4_0
     obsidian
     ffmpeg-full
+    openmw
+    brightnessctl
   ];
 
   programs.gamemode.enable = true;
