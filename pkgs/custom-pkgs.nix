@@ -8,7 +8,7 @@ let
   # spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 
 in {
-  environment.systemPackages = [ webwp ];
+  environment.systemPackages = [ webwp hiddify ];
   fonts.packages = [ zira-code ];
   programs.spicetify = {
     enable = true;

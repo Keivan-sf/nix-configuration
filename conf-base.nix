@@ -244,7 +244,7 @@
     jan
     mkcert
     appimage-run
-    mesa-demos
+    pkgs24.mesa-demos
     gimp-with-plugins
     playerctl
     cmus
@@ -268,7 +268,7 @@
     lsof
     file
     nix-index
-    hiddify-app
+    # hiddify-app
     pkgs23.sing-box
     # spotify
     bicon
