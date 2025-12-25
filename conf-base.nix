@@ -244,6 +244,8 @@
     jan
     mkcert
     appimage-run
+    pkgs24.mesa
+    libGLU
     pkgs24.mesa-demos
     gimp-with-plugins
     playerctl
