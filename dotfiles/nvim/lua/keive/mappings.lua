@@ -3,7 +3,10 @@ local utils = require("keive.utils")
 
 map("n", "|", "<cmd>vsplit<cr>")
 map("n", "\\", "<cmd>split<cr>")
+
+-- open url
 map("n", "gx", [[:silent execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]])
+
 -- telescope
 if utils.is_available("telescope.nvim") then
 	-- Git branches

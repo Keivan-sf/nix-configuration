@@ -2,7 +2,8 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs2505.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs24.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs23.url = "github:NixOS/nixpkgs/nixos-23.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -24,6 +25,7 @@
           inherit system;
           config.allowUnfree = true;
         };
+        pkgs2505 = inputs.nixpkgs2505.legacyPackages.${system};
         pkgs24 = inputs.nixpkgs24.legacyPackages.${system};
         pkgs23 = inputs.nixpkgs23.legacyPackages.${system};
         spicePkgs = inputs.spicetify-nix.legacyPackages.${system};

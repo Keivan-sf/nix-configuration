@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { } }:
+{ pkgs, ... }:
 
 pkgs.stdenv.mkDerivation {
   pname = "webwp";
@@ -24,13 +24,12 @@ pkgs.stdenv.mkDerivation {
     cairo
     gdk-pixbuf
     glib
-    gtk3
+    gtk4.dev
     harfbuzz
     librsvg
     libsoup_3
     pango
-    # webkitgtk_4_1
-    webkitgtk_4_0
+    webkitgtk_4_1
     openssl
     xorg.libX11
     xorg.libXext
@@ -40,7 +39,7 @@ pkgs.stdenv.mkDerivation {
     runHook preBuild
 
     cc ./webkit_rp2.c -o webwp \
-      $(pkg-config --cflags --libs gtk+-3.0 pangocairo x11 xext webkit2gtk-4.0)
+      $(pkg-config --cflags --libs gtk+-3.0 pangocairo x11 xext webkit2gtk-4.1)
 
     runHook postBuild
   '';

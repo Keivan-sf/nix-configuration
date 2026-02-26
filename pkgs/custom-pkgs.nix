@@ -2,11 +2,9 @@
 
 let
   hiddify = import ./packages/hiddify/hiddify.nix { inherit (pkgs) ; };
-  webwp = pkgs.callPackage ./packages/webwp/webkitwp.nix { inherit (pkgs) ; };
+  webwp = pkgs.callPackage ./packages/webwp/webkitwp.nix { pkgs = pkgs; };
   zira-code =
     pkgs.callPackage ./fonts/zira-code/zira-code.nix { inherit (pkgs) ; };
-  # spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-
 in {
   environment.systemPackages = [ webwp hiddify ];
   fonts.packages = [ zira-code ];

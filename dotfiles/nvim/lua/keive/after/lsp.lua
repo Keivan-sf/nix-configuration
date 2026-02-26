@@ -79,6 +79,7 @@ if is_lsp_available and is_cmp_available then
 	require("lspconfig").cssls.setup({
 		capabilities = capabilities,
 	})
+	-- require("lspconfig").dartls.setup({})
 	require("lspconfig").gopls.setup({})
 	require("lspconfig").clangd.setup({
 		capabilities = capabilities,

@@ -14,11 +14,6 @@
 
   boot.kernelModules = [ "kvm-intel" "i2c-dev" ];
 
-  fileSystems."/winlean" = {
-    device = "/dev/disk/by-uuid/01DAA516DB159820";
-    fsType = "ntfs";
-  };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;

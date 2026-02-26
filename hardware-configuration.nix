@@ -23,6 +23,16 @@
     options = [ "fmask=0077" "dmask=0077" ];
   };
 
+  fileSystems."/winlean" = {
+    device = "/dev/disk/by-uuid/01DAA516DB159820";
+    fsType = "ntfs";
+  };
+
+  fileSystems."/240wn" = {
+    device = "/dev/disk/by-uuid/06595062-31e9-415d-bb29-3949abb334ef";
+    fsType = "ext4";
+  };
+
   swapDevices =
     [{ device = "/dev/disk/by-uuid/c5156e3c-fd2f-4161-8912-f322e28cab29"; }];
 

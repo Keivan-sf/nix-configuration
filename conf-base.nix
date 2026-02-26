@@ -129,7 +129,6 @@
     gh
     neovide
     libgcc
-    gcc9
     mpv
     gnome-disk-utility
     gnome-sound-recorder
@@ -200,7 +199,7 @@
     black
     astyle
     obs-studio
-    libsForQt5.kdenlive
+    # kdePackages.kdenlive
     unrar
     tor-browser
     calibre
@@ -212,7 +211,7 @@
     winetricks
     lutris
     autoconf271
-    automake115x
+    automake
     nasm
     hunspell
     hunspellDicts.uk_UA
@@ -222,18 +221,18 @@
     unstable.rustc
     unstable.rust-analyzer
     unstable.rustfmt
-    libsForQt5.okular
+    kdePackages.okular
     nomacs
-    onlyoffice-bin_latest
+    # onlyoffice-bin_latest
     unstable.libreoffice-qt6-fresh
-    wpsoffice
+    # wpsoffice
     virtualenv
     glibc
     zip
     neofetch
     alsa-utils
     electron
-    libsForQt5.kcharselect
+    kdePackages.kcharselect
     docker-compose
     git
     wireshark
@@ -258,7 +257,6 @@
     xray
     llama-cpp
     zellij
-    amberol
     v2rayn
     nix-serve-ng
     jq
@@ -288,12 +286,15 @@
     joplin-desktop
     revanced-cli
     # wails deps
-    webkitgtk_4_0
+    webkitgtk_4_1
     obsidian
     ffmpeg-full
     brightnessctl
     bluez
     bluez-tools
+    # dart
+    mangohud
+    flutter
   ];
 
   programs.gamemode.enable = true;
@@ -422,10 +423,14 @@
     5000
     3000 # development
     12334 # hiddify
+    8190 #local socks5
+    8199 #local socks5
   ];
 
   networking.firewall.allowedUDPPorts = [
     8472 # k3s, flannel: required if using multi-node for inter-node networking
+    8190 #local socks5
+    8199 #local socks5
   ];
 
   networking.extraHosts = ''

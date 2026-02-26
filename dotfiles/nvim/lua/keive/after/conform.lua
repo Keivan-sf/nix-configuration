@@ -23,6 +23,7 @@ if utils.is_available("conform.nvim") then
 			hpp = { "astyle" },
 			nix = { "nixfmt" },
 			go = { "gofmt" },
+			dart = { "dart_format" },
 		},
 		-- If this is set, Conform will run the formatter on save.
 		-- It will pass the table to conform.format().
