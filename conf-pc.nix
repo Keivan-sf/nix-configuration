@@ -13,6 +13,13 @@
   ];
 
   boot.kernelModules = [ "kvm-intel" "i2c-dev" ];
+  boot.kernelParams = [ "intel_iommu=on" "iommu=pt" ];
+  services.udev.extraRules = ''
+    # BBC micro:bit CMSIS-DAP debug probe
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", ATTR{idProduct}=="0204", MODE="0666", TAG+="uaccess"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="0666", TAG+="uaccess"
+  '';
+  security.pki.certificateFiles = [ /etc/nix-certs/ca.crt ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = false;

@@ -13,7 +13,7 @@
   nixpkgs.config.permittedInsecurePackages = [ "mbedtls-2.28.10" ];
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -30,6 +30,12 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+
+  services.udev.extraRules = ''
+    # BBC micro:bit CMSIS-DAP debug probe
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", ATTR{idProduct}=="0204", MODE="0666", TAG+="uaccess"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="0666", TAG+="uaccess"
+  '';
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
@@ -95,7 +101,8 @@
   users.users.keive = {
     isNormalUser = true;
     description = "keive";
-    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "docker" ];
+    extraGroups =
+      [ "networkmanager" "wheel" "scanner" "lp" "docker" "dialout" ];
     packages = with pkgs;
       [
         firefox
@@ -107,6 +114,20 @@
   nixpkgs.config.allowUnfree = true;
   # flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.settings.substituters = [
+    # status: https://mirror.sjtu.edu.cn/
+    # "https://mirror.sjtu.edu.cn/nix-channels/store"
+
+    # status: https://mirrors.tuna.tsinghua.edu.cn/
+    # "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+
+    # status: https://mirrors.ustc.edu.cn/status/
+    # "https://mirrors.ustc.edu.cn/nix-channels/store"
+  ];
+
+  nix.settings.flake-registry = "";
+
   # fonts
   fonts.packages = with pkgs; [ nerd-fonts.fira-code vazir-fonts corefonts ];
 
@@ -240,7 +261,8 @@
       echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
     unstable.tailwindcss-language-server
     emmet-ls
-    jan
+    pkgs24.jan
+    # jan
     mkcert
     appimage-run
     pkgs24.mesa
@@ -295,6 +317,23 @@
     # dart
     mangohud
     flutter
+    # fastfetch
+    #opengl
+    pkgs.libGL # OpenGL
+    pkgs.glfw # window/context creation
+    pkgs.glew # OpenGL function loader
+    pkgs.freeglut
+    gcc
+    codex
+    p11-kit
+    OVMF
+    busybox
+    virtio-win
+    mlocate
+    steghide
+    gcc-arm-embedded
+    amnezia-vpn
+    picocom
   ];
 
   programs.gamemode.enable = true;
@@ -410,7 +449,10 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
     443
+    40443
+    8443
     80
+    8081
     2080
     2081
     20170
@@ -423,14 +465,20 @@
     5000
     3000 # development
     12334 # hiddify
-    8190 #local socks5
-    8199 #local socks5
+    8190 # local socks5
+    8199 # local socks5
+    3090
+    3080
+    7090
+    7091
+    7092
+    7093
   ];
 
   networking.firewall.allowedUDPPorts = [
     8472 # k3s, flannel: required if using multi-node for inter-node networking
-    8190 #local socks5
-    8199 #local socks5
+    8190 # local socks5
+    8199 # local socks5
   ];
 
   networking.extraHosts = ''
@@ -442,10 +490,24 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   # dns
-  # networking.nameservers = [ "178.22.122.100" "185.51.200.2" ]; # shecan
+  networking.networkmanager.dns = "none";
+  # networking.nameservers = [ "185.51.200.2" "178.22.122.100" ]; # shecan
   # networking.nameservers = [ "172.29.0.100" "172.29.2.100" ]; # hostiran
   # networking.nameservers = [ "10.202.10.202" "10.202.10.102" ]; # 403
-  networking.nameservers = [ "8.8.8.8" ];
+  # networking.nameservers = [ "193.186.32.32" ]; # bertina
+  networking.nameservers = [
+    "94.232.168.103"
+    "194.225.152.12"
+    "194.225.152.10"
+    "185.95.155.177"
+    "10.104.204.15"
+    "10.104.205.23"
+    "10.104.205.183"
+    "10.104.204.183"
+    "10.104.209.87"
+    "78.157.52.0"
+  ]; # misc
+  # networking.nameservers = [ "8.8.8.8" ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
