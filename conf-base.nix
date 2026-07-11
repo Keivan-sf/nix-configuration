@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, pkgs24, pkgs23, ... }:
+{ config, pkgs, unstable, pkgs25, pkgs24, pkgs23, ... }:
 
 {
   imports = [ ./pkgs/custom-pkgs.nix ];
@@ -162,7 +162,7 @@
     pavucontrol
     go
     unstable.nodejs_22
-    python3
+    python313
     unzip
     vscode
     kitty
@@ -180,37 +180,37 @@
     picom
     ripgrep
     bc
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-    nodePackages.svelte-language-server
+    typescript
+    typescript-language-server
+    svelte-language-server
     insomnia
     nixfmt-classic
-    proxychains
+    pkgs25.proxychains
     vscode-langservers-extracted
-    python311Packages.python-lsp-server
-    python311Packages.autopep8
-    python3.pkgs.pip
+    python313Packages.python-lsp-server
+    python313Packages.autopep8
+    python313Packages.pip
     pyright
     zoxide
     fzf
     nest-cli
     dbeaver-bin
-    discord
+    pkgs25.discord
     direnv
-    nodePackages.prettier
+    prettier
     prettierd
     openssl
-    nodePackages.prisma
-    nodePackages.dotenv-cli
+    prisma_7
+    dotenv-cli
     eslint_d
     bun
     lzip
     dpkg
     csharp-ls
-    dotnet-sdk_8
+    pkgs25.dotnet-sdk_8
     ncompress
     codespell
-    nodePackages.cspell
+    cspell
     wireguard-tools
     tree
     gdb
@@ -219,10 +219,10 @@
     stylua
     black
     astyle
-    obs-studio
+    pkgs25.obs-studio
     # kdePackages.kdenlive
     unrar
-    tor-browser
+    pkgs25.tor-browser
     calibre
     gtk3
     gnupg
@@ -231,7 +231,7 @@
     wineWowPackages.stableFull
     winetricks
     lutris
-    autoconf271
+    autoconf
     automake
     nasm
     hunspell
@@ -250,13 +250,13 @@
     virtualenv
     glibc
     zip
-    neofetch
+    fastfetch
     alsa-utils
     electron
     kdePackages.kcharselect
     docker-compose
     git
-    wireshark
+    pkgs25.wireshark
     (writeShellScriptBin "xon" ''
       echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
     unstable.tailwindcss-language-server
@@ -268,12 +268,12 @@
     pkgs24.mesa
     libGLU
     pkgs24.mesa-demos
-    gimp-with-plugins
+    pkgs25.gimp-with-plugins
     playerctl
     cmus
     yt-dlp
     p7zip
-    musescore
+    pkgs25.musescore
     inetutils
     dig
     xray
@@ -282,7 +282,6 @@
     v2rayn
     nix-serve-ng
     jq
-    node2nix
     iperf
     go
     gopls
@@ -295,7 +294,7 @@
     # spotify
     bicon
     tcpdump
-    eww
+    pkgs25.eww
     buf
     protoc-gen-connect-go
     xwinwrap
@@ -305,7 +304,6 @@
     wmctrl
     xdo
     xorg.xwininfo
-    joplin-desktop
     revanced-cli
     # wails deps
     webkitgtk_4_1
