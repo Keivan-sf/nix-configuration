@@ -43,6 +43,10 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
+  # services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login = {
+    enableGnomeKeyring = true;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us,ir";
@@ -87,7 +91,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -141,12 +145,13 @@
     google-chrome
     i3
     unstable.telegram-desktop
+    # telegram-desktop
     btop
     libnotify
     pulseaudioFull
     dunst
     killall
-    neovim
+    pkgs25.neovim
     gh
     neovide
     libgcc
@@ -195,7 +200,7 @@
     fzf
     nest-cli
     dbeaver-bin
-    pkgs25.discord
+    # pkgs25.discord
     direnv
     prettier
     prettierd
@@ -332,10 +337,15 @@
     gcc-arm-embedded
     amnezia-vpn
     picocom
+    godot
+    guitarix
+    kdePackages.kdenlive
+    libsecret
   ];
 
   programs.gamemode.enable = true;
   programs.nix-ld.enable = true;
+  programs.kdeconnect.enable = true;
 
   programs.proxychains = {
     enable = true;
