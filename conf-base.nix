@@ -169,7 +169,6 @@
     unstable.nodejs_22
     python313
     unzip
-    vscode
     kitty
     gnumake
     deno
@@ -341,6 +340,7 @@
     guitarix
     kdePackages.kdenlive
     libsecret
+    tsx
   ];
 
   programs.gamemode.enable = true;

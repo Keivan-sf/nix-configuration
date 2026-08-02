@@ -3,7 +3,6 @@
   home.stateVersion = "22.05";
   home.enableNixpkgsReleaseCheck = false;
   programs.home-manager.enable = true;
-
   xdg.configFile."kitty/kitty.conf".source = ./dotfiles/kitty/kitty.conf;
   xdg.configFile."picom/picom.conf".source = ./dotfiles/picom/picom.conf;
   xdg.configFile."zellij/dev-layout.kdl".source =
@@ -15,6 +14,16 @@
     ./dotfiles/i3/kitty_scratchpad.sh;
   xdg.configFile."nvim".source = ./dotfiles/nvim;
   xdg.configFile."eww".source = ./dotfiles/eww;
+
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      dracula-theme.theme-dracula
+      vscodevim.vim
+      dart-code.flutter
+      joshmu.periscope
+    ];
+  };
 
   programs.zsh = {
     enable = true;
