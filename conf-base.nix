@@ -22,6 +22,18 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # nix-daemon and its socket need NSS-based user lookup to be available
+  # before systemd starts them during boot. Ordering alone was not enough
+  # here because nix-daemon.socket was still being started eagerly at boot.
+  systemd.services.nix-daemon.after = [ "nss-user-lookup.target" ];
+  systemd.services.nix-daemon.requires = [ "nss-user-lookup.target" ];
+  systemd.services.nix-daemon.wants = [ "nss-user-lookup.target" ];
+  systemd.sockets.nix-daemon.after = [ "nss-user-lookup.target" ];
+  systemd.sockets.nix-daemon.requires = [ "nss-user-lookup.target" ];
+  systemd.sockets.nix-daemon.wants = [ "nss-user-lookup.target" ];
+  systemd.services.home-manager-keive.after = [ "nss-user-lookup.target" ];
+  systemd.services.home-manager-keive.requires = [ "nss-user-lookup.target" ];
+
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
 
@@ -44,9 +56,7 @@
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
   # services.gnome.gnome-keyring.enable = true;
-  security.pam.services.login = {
-    enableGnomeKeyring = true;
-  };
+  security.pam.services.login = { enableGnomeKeyring = true; };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us,ir";
@@ -103,6 +113,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.keive = {
+    home = "/home/keive";
     isNormalUser = true;
     description = "keive";
     extraGroups =
@@ -265,8 +276,6 @@
       echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
     unstable.tailwindcss-language-server
     emmet-ls
-    pkgs24.jan
-    # jan
     mkcert
     appimage-run
     pkgs24.mesa
@@ -341,6 +350,7 @@
     kdePackages.kdenlive
     libsecret
     tsx
+    qbittorrent
   ];
 
   programs.gamemode.enable = true;
@@ -481,12 +491,14 @@
     7091
     7092
     7093
+    51413 # torrent
   ];
 
   networking.firewall.allowedUDPPorts = [
     8472 # k3s, flannel: required if using multi-node for inter-node networking
     8190 # local socks5
     8199 # local socks5
+    51413 # torrent
   ];
 
   networking.extraHosts = ''
