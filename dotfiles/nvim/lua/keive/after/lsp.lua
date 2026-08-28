@@ -84,4 +84,7 @@ if is_lsp_available and is_cmp_available then
 	require("lspconfig").clangd.setup({
 		capabilities = capabilities,
 	})
+	require("lspconfig").gdscript.setup({
+		capabilities = capabilities,
+	})
 end

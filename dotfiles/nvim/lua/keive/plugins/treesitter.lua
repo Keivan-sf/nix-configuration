@@ -53,6 +53,9 @@ return {
 				"typescript",
 				"javascript",
 				"prisma",
+				"gdscript",
+				"godot_resource",
+				"gdshader",
 			},
 			highlight = {
 				enable = true,
