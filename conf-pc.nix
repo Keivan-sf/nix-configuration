@@ -40,7 +40,17 @@
     wofi
     hyprpaper
     mako
+    # ollama-cuda
   ];
+
+  # services.open-webui = { enable = true; };
+  services.ollama = {
+    package = pkgs.ollama-cuda;
+    enable = true;
+
+    host = "0.0.0.0";
+
+  };
 
   services.xserver.videoDrivers = [ "nvidia" ];
 

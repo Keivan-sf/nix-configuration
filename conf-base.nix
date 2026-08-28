@@ -286,7 +286,8 @@
     cmus
     yt-dlp
     p7zip
-    pkgs25.musescore
+    # pkgs25.musescore
+    musescore
     inetutils
     dig
     xray
@@ -346,6 +347,8 @@
     amnezia-vpn
     picocom
     godot
+    gdtoolkit_4
+    gdscript-formatter
     guitarix
     kdePackages.kdenlive
     libsecret
@@ -492,6 +495,7 @@
     7092
     7093
     51413 # torrent
+    11434
   ];
 
   networking.firewall.allowedUDPPorts = [
@@ -499,6 +503,7 @@
     8190 # local socks5
     8199 # local socks5
     51413 # torrent
+    11434
   ];
 
   networking.extraHosts = ''

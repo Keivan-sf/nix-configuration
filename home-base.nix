@@ -15,15 +15,15 @@
   xdg.configFile."nvim".source = ./dotfiles/nvim;
   xdg.configFile."eww".source = ./dotfiles/eww;
 
-  # programs.vscode = {
-  #   enable = true;
-  #   extensions = with pkgs.vscode-extensions; [
-  #     dracula-theme.theme-dracula
-  #     vscodevim.vim
-  #     dart-code.flutter
-  #     joshmu.periscope
-  #   ];
-  # };
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      dracula-theme.theme-dracula
+      vscodevim.vim
+      dart-code.flutter
+      joshmu.periscope
+    ];
+  };
 
   programs.zsh = {
     enable = true;
