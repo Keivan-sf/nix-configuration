@@ -5,7 +5,7 @@
 { config, pkgs, unstable, pkgs25, pkgs24, pkgs23, ... }:
 
 {
-  imports = [ ./pkgs/custom-pkgs.nix ];
+  imports = [ ./pkgs/custom-pkgs.nix ./lib/xdg.nix ];
   # home 
   home-manager.backupFileExtension = "backup";
   home-manager.useGlobalPkgs = true;
@@ -393,18 +393,6 @@
   environment.shells = with pkgs; [ zsh ];
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-
-  # xdg
-  xdg.mime.defaultApplications = {
-    "inode/directory" = "nautilus";
-    "video/x-matroska" = "mpv";
-    "x-scheme-handler/http" = "google-chrome.desktop";
-    "x-scheme-handler/https" = "google-chrome.desktop";
-    "text/html" = "google-chrome.desktop";
-    "text/plain" = "neovide";
-  };
-
-  xdg.mime.enable = true;
 
   # systemd.services.my-v2raya = {
   #   script = ''
