@@ -8,8 +8,15 @@
 
   boot.initrd.availableKernelModules =
     [ "vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
+  boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback \
+      devices=2 \
+      video_nr=10,11 \
+      card_label="OBS Virtual Camera,DroidCam Virtual Camera" \
+      exclusive_caps=1
+  '';
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/84adba85-2916-445f-b041-f02e03b860a0";
