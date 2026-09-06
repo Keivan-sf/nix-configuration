@@ -354,6 +354,7 @@
     libsecret
     tsx
     qbittorrent
+    img2pdf
   ];
 
   programs.gamemode.enable = true;
