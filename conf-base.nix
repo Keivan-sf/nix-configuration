@@ -170,7 +170,7 @@
     gnome-disk-utility
     gnome-sound-recorder
     spotify
-    xfce.xfce4-pulseaudio-plugin
+    xfce4-pulseaudio-plugin
     pkgs24.gscreenshot
     xclip
     wordnet
@@ -199,7 +199,7 @@
     typescript-language-server
     svelte-language-server
     insomnia
-    nixfmt-classic
+    nixfmt
     pkgs25.proxychains
     vscode-langservers-extracted
     python313Packages.python-lsp-server
@@ -229,7 +229,7 @@
     wireguard-tools
     tree
     gdb
-    nekoray
+    throne
     # pkgs24.nekoray
     stylua
     black
@@ -243,7 +243,7 @@
     gnupg
     pinentry-tty
     age
-    wineWowPackages.stableFull
+    wineWow64Packages.stableFull
     winetricks
     lutris
     autoconf
@@ -317,7 +317,7 @@
     qemu
     wmctrl
     xdo
-    xorg.xwininfo
+    xwininfo
     revanced-cli
     # wails deps
     webkitgtk_4_1

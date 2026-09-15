@@ -31,8 +31,8 @@ pkgs.stdenv.mkDerivation {
     pango
     webkitgtk_4_1
     openssl
-    xorg.libX11
-    xorg.libXext
+    libX11
+    libXext
   ];
 
   buildPhase = ''
