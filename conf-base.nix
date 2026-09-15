@@ -355,6 +355,8 @@
     tsx
     qbittorrent
     img2pdf
+    brave
+    pixelorama
   ];
 
   programs.gamemode.enable = true;
