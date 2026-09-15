@@ -90,4 +90,4 @@ if (codeforcesSource) {
   writeCodeforcesInputs(puzzleDir, readCodeforcesSource(codeforcesSource));
 }
 
-console.log(`Created ${puzzleDir}`);
+console.log(puzzleDir);
