@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, ... }:
+{
+  config,
+  pkgs,
+  unstable,
+  ...
+}:
 
 {
   imports = [
@@ -15,6 +20,29 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # home 
-  home-manager.users.keive = { imports = [ ./home-laptop.nix ]; };
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
+  ];
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # Primary driver (iHD)
+      intel-vaapi-driver # Fallback driver
+      intel-compute-runtime # OpenCL support for tone mapping
+      vpl-gpu-rt # QSV API support (Tiger Lake/2020+)
+    ];
+  };
+
+  # home
+  home-manager.users.keive = {
+    imports = [ ./home-laptop.nix ];
+  };
 }
