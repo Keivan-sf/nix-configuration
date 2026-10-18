@@ -378,6 +378,7 @@
     brave
     pixelorama
     playwright
+    unstable.surge-downloader
   ];
 
   programs.gamemode.enable = true;
