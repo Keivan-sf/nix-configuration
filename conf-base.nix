@@ -2,11 +2,22 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, pkgs25, pkgs24, pkgs23, ... }:
+{
+  config,
+  pkgs,
+  unstable,
+  pkgs25,
+  pkgs24,
+  pkgs23,
+  ...
+}:
 
 {
-  imports = [ ./pkgs/custom-pkgs.nix ./lib/xdg.nix ];
-  # home 
+  imports = [
+    ./pkgs/custom-pkgs.nix
+    ./lib/xdg.nix
+  ];
+  # home
   home-manager.backupFileExtension = "backup";
   home-manager.useGlobalPkgs = true;
 
@@ -56,7 +67,9 @@
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
   # services.gnome.gnome-keyring.enable = true;
-  security.pam.services.login = { enableGnomeKeyring = true; };
+  security.pam.services.login = {
+    enableGnomeKeyring = true;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us,ir";
@@ -116,19 +129,27 @@
     home = "/home/keive";
     isNormalUser = true;
     description = "keive";
-    extraGroups =
-      [ "networkmanager" "wheel" "scanner" "lp" "docker" "dialout" ];
-    packages = with pkgs;
-      [
-        firefox
-        #  thunderbird
-      ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "scanner"
+      "lp"
+      "docker"
+      "dialout"
+    ];
+    packages = with pkgs; [
+      firefox
+      #  thunderbird
+    ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nix.settings.substituters = [
     # status: https://mirror.sjtu.edu.cn/
@@ -144,7 +165,11 @@
   nix.settings.flake-registry = "";
 
   # fonts
-  fonts.packages = with pkgs; [ nerd-fonts.fira-code vazir-fonts corefonts ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+    vazir-fonts
+    corefonts
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -270,10 +295,8 @@
     electron
     kdePackages.kcharselect
     docker-compose
-    git
     pkgs25.wireshark
-    (writeShellScriptBin "xon" ''
-      echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
+    (writeShellScriptBin "xon" ''echo "$(nohup nautilus . -w 1>/dev/null 2>/dev/null & exit 1>/dev/null)" | sh'')
     unstable.tailwindcss-language-server
     emmet-ls
     mkcert
@@ -336,7 +359,7 @@
     pkgs.glew # OpenGL function loader
     pkgs.freeglut
     gcc
-    codex
+    unstable.codex
     p11-kit
     OVMF
     busybox
@@ -357,11 +380,16 @@
     img2pdf
     brave
     pixelorama
+    playwright
   ];
 
   programs.gamemode.enable = true;
   programs.nix-ld.enable = true;
   programs.kdeconnect.enable = true;
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
 
   programs.proxychains = {
     enable = true;
@@ -407,22 +435,21 @@
 
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall =
-      true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall =
-      true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall =
-      true; # Open ports in the firewall for Steam Local Network Game Transfers
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  #k3s 
+  #k3s
   #services.k3s.enable = true;
   #services.k3s.role = "server";
   #services.k3s.extraFlags = toString [
   # "--debug" # Optionally add additional args to k3s
   #];
 
-  environment.etc.genssl = { source = ./dotfiles/nginx/ssl; };
+  environment.etc.genssl = {
+    source = ./dotfiles/nginx/ssl;
+  };
 
   services.nginx = {
     enable = true;
@@ -487,6 +514,7 @@
     7093
     51413 # torrent
     11434
+    7372 # bushuray webui
   ];
 
   networking.firewall.allowedUDPPorts = [
