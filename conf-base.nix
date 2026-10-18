@@ -369,9 +369,6 @@
     gcc-arm-embedded
     amnezia-vpn
     picocom
-    godot
-    gdtoolkit_4
-    gdscript-formatter
     guitarix
     kdePackages.kdenlive
     libsecret

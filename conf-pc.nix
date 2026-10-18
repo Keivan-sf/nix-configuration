@@ -41,6 +41,9 @@
     hyprpaper
     mako
     # ollama-cuda
+    godot
+    gdtoolkit_4
+    gdscript-formatter
   ];
 
   # services.open-webui = { enable = true; };
