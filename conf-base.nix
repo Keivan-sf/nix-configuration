@@ -513,6 +513,7 @@
     51413 # torrent
     11434
     7372 # bushuray webui
+    7500 # upload
   ];
 
   networking.firewall.allowedUDPPorts = [
