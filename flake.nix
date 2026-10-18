@@ -9,7 +9,7 @@
     nixpkgs23.url = "github:NixOS/nixpkgs/nixos-23.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    # spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -30,7 +30,7 @@
         pkgs2505 = inputs.nixpkgs2505.legacyPackages.${system};
         pkgs24 = inputs.nixpkgs24.legacyPackages.${system};
         pkgs23 = inputs.nixpkgs23.legacyPackages.${system};
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+        # spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
         #secrets = import /etc/secrets.nix;
       };
     in {
@@ -39,7 +39,7 @@
         modules = [
           ./conf-pc.nix
           inputs.home-manager.nixosModules.default
-          inputs.spicetify-nix.nixosModules.spicetify
+          # inputs.spicetify-nix.nixosModules.spicetify
         ];
       };
 
@@ -48,7 +48,7 @@
         modules = [
           ./conf-laptop.nix
           inputs.home-manager.nixosModules.default
-          inputs.spicetify-nix.nixosModules.spicetify
+          # inputs.spicetify-nix.nixosModules.spicetify
         ];
       };
 
