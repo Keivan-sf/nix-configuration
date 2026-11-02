@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    heavybuildpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs25.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs2505.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs24.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -17,41 +18,49 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations = let
-      system = "x86_64-linux";
-      specialArgs = inputs // {
-        # unstable = inputs.unstable.legacyPackages.${system};
-        unstable = import inputs.unstable {
-          inherit system;
-          config.allowUnfree = true;
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    {
+      nixosConfigurations =
+        let
+          system = "x86_64-linux";
+          specialArgs = inputs // {
+            # unstable = inputs.unstable.legacyPackages.${system};
+            unstable = import inputs.unstable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+            pkgs25 = inputs.nixpkgs25.legacyPackages.${system};
+            pkgs2505 = inputs.nixpkgs2505.legacyPackages.${system};
+            pkgs24 = inputs.nixpkgs24.legacyPackages.${system};
+            pkgs23 = inputs.nixpkgs23.legacyPackages.${system};
+            heavybuildpkgs = import inputs.heavybuildpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            };
+            # spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+            #secrets = import /etc/secrets.nix;
+          };
+        in
+        {
+          pc = nixpkgs.lib.nixosSystem {
+            specialArgs = specialArgs;
+            modules = [
+              ./conf-pc.nix
+              inputs.home-manager.nixosModules.default
+              # inputs.spicetify-nix.nixosModules.spicetify
+            ];
+          };
+
+          laptop = nixpkgs.lib.nixosSystem {
+            specialArgs = specialArgs;
+            modules = [
+              ./conf-laptop.nix
+              inputs.home-manager.nixosModules.default
+              # inputs.spicetify-nix.nixosModules.spicetify
+            ];
+          };
+
         };
-        pkgs25 = inputs.nixpkgs25.legacyPackages.${system};
-        pkgs2505 = inputs.nixpkgs2505.legacyPackages.${system};
-        pkgs24 = inputs.nixpkgs24.legacyPackages.${system};
-        pkgs23 = inputs.nixpkgs23.legacyPackages.${system};
-        # spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
-        #secrets = import /etc/secrets.nix;
-      };
-    in {
-      pc = nixpkgs.lib.nixosSystem {
-        specialArgs = specialArgs;
-        modules = [
-          ./conf-pc.nix
-          inputs.home-manager.nixosModules.default
-          # inputs.spicetify-nix.nixosModules.spicetify
-        ];
-      };
-
-      laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = specialArgs;
-        modules = [
-          ./conf-laptop.nix
-          inputs.home-manager.nixosModules.default
-          # inputs.spicetify-nix.nixosModules.spicetify
-        ];
-      };
-
     };
-  };
 }

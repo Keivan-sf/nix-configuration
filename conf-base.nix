@@ -202,7 +202,7 @@
     unstable.piper-tts
     pavucontrol
     go
-    unstable.nodejs_22
+    nodejs
     python313
     unzip
     kitty
@@ -285,7 +285,7 @@
     kdePackages.okular
     nomacs
     # onlyoffice-bin_latest
-    unstable.libreoffice-qt6-fresh
+    libreoffice-qt6-fresh
     # wpsoffice
     virtualenv
     glibc
@@ -307,7 +307,7 @@
     pkgs25.gimp-with-plugins
     playerctl
     cmus
-    yt-dlp
+    unstable.yt-dlp
     p7zip
     # pkgs25.musescore
     musescore
@@ -378,7 +378,10 @@
     brave
     pixelorama
     playwright
-    unstable.surge-downloader
+    bubblewrap
+    opus-tools
+    android-tools
+    hypnotix
   ];
 
   programs.gamemode.enable = true;
@@ -490,6 +493,7 @@
     8443
     80
     8081
+    9000 # s3 bucket for expo go apps
     2080
     2081
     20170

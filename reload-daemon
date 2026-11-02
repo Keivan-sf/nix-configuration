@@ -1,0 +1,5 @@
+# this did not work?
+# systemctl reset-failed nix-daemon.service nix-daemon.socket
+
+# start daemon
+sudo nix-daemon --daemon

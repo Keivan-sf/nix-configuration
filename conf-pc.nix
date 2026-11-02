@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, ... }:
+{ config, pkgs, unstable, heavybuildpkgs, ... }:
 
 {
   imports = [
@@ -48,7 +48,7 @@
 
   # services.open-webui = { enable = true; };
   services.ollama = {
-    package = pkgs.ollama-cuda;
+    package = heavybuildpkgs.ollama-cuda;
     enable = true;
 
     host = "0.0.0.0";

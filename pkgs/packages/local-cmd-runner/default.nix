@@ -1,11 +1,12 @@
-{ lib
-, stdenvNoCC
-, fetchFromGitHub
-, fetchPnpmDeps
-, makeWrapper
-, nodejs_22
-, pnpm_10
-, pnpmConfigHook
+{
+  lib,
+  stdenvNoCC,
+  fetchFromGitHub,
+  fetchPnpmDeps,
+  makeWrapper,
+  nodejs_22,
+  pnpm,
+  pnpmConfigHook,
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
@@ -21,15 +22,15 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   pnpmDeps = fetchPnpmDeps {
     inherit (finalAttrs) pname version src;
-    pnpm = pnpm_10;
+    pnpm = pnpm;
     fetcherVersion = 3;
-    hash = "sha256-NlcxVcscDXwK4aP8V5DS84Cjy1FlUZ5UVx8tMvMdpzM=";
+    hash = "sha256-/66jzYlF3RgQHOB/YbgEFgx0C/t7B5+xN60/8VC+3bY=";
   };
 
   nativeBuildInputs = [
     makeWrapper
     nodejs_22
-    pnpm_10
+    pnpm
     pnpmConfigHook
   ];
 
