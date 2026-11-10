@@ -375,7 +375,7 @@
     tsx
     qbittorrent
     img2pdf
-    brave
+    unstable.brave
     pixelorama
     playwright
     bubblewrap
