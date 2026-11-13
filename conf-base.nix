@@ -381,9 +381,6 @@
     bubblewrap
     opus-tools
     android-tools
-    hypnotix
-    android-studio
-    smartmontools
   ];
 
   programs.gamemode.enable = true;

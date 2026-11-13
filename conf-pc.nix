@@ -2,7 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, heavybuildpkgs, ... }:
+{
+  config,
+  pkgs,
+  unstable,
+  heavybuildpkgs,
+  ...
+}:
 
 {
   imports = [
@@ -12,8 +18,14 @@
     ./conf-base.nix
   ];
 
-  boot.kernelModules = [ "kvm-intel" "i2c-dev" ];
-  boot.kernelParams = [ "intel_iommu=on" "iommu=pt" ];
+  boot.kernelModules = [
+    "kvm-intel"
+    "i2c-dev"
+  ];
+  boot.kernelParams = [
+    "intel_iommu=on"
+    "iommu=pt"
+  ];
   services.udev.extraRules = ''
     # BBC micro:bit CMSIS-DAP debug probe
     SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", ATTR{idProduct}=="0204", MODE="0666", TAG+="uaccess"
@@ -30,8 +42,10 @@
   boot.loader.grub.efiSupport = true;
   #  boot.loader.systemd-boot.enable = true;
 
-  # home 
-  home-manager.users.keive = { imports = [ ./home-pc.nix ]; };
+  # home
+  home-manager.users.keive = {
+    imports = [ ./home-pc.nix ];
+  };
 
   environment.systemPackages = with pkgs; [
     openrgb-with-all-plugins
@@ -44,6 +58,8 @@
     godot
     gdtoolkit_4
     gdscript-formatter
+    android-studio
+    smartmontools
   ];
 
   # services.open-webui = { enable = true; };
@@ -75,8 +91,7 @@
       AllowUsers = null;
       UseDns = true;
       X11Forwarding = false;
-      PermitRootLogin =
-        "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
 
