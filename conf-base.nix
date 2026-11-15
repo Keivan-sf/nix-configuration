@@ -381,6 +381,8 @@
     bubblewrap
     opus-tools
     android-tools
+    jellyfin-mpv-shim
+    jellyfin-desktop
   ];
 
   programs.gamemode.enable = true;
@@ -512,6 +514,7 @@
     7090
     7091
     7092
+    7192
     7093
     51413 # torrent
     11434
