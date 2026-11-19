@@ -383,6 +383,7 @@
     android-tools
     jellyfin-mpv-shim
     jellyfin-desktop
+    gocryptfs
   ];
 
   programs.gamemode.enable = true;
