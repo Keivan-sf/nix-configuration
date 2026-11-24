@@ -384,6 +384,7 @@
     jellyfin-mpv-shim
     jellyfin-desktop
     gocryptfs
+    python313Packages.matplotlib
   ];
 
   programs.gamemode.enable = true;
