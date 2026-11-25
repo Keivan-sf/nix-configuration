@@ -385,6 +385,7 @@
     jellyfin-desktop
     gocryptfs
     python313Packages.matplotlib
+    certbot
   ];
 
   programs.gamemode.enable = true;
