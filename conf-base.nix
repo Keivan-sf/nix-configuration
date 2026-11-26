@@ -386,6 +386,7 @@
     gocryptfs
     python313Packages.matplotlib
     certbot
+    pymol
   ];
 
   programs.gamemode.enable = true;
