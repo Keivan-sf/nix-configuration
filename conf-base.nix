@@ -21,7 +21,7 @@
   home-manager.backupFileExtension = "backup";
   home-manager.useGlobalPkgs = true;
 
-  nixpkgs.config.permittedInsecurePackages = [ "mbedtls-2.28.10" ];
+  nixpkgs.config.permittedInsecurePackages = [ "mbedtls-2.28.10" "electron-40.10.5" "pnpm-10.29.2" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant
@@ -387,6 +387,7 @@
     python313Packages.matplotlib
     certbot
     pymol
+    cherry-studio
   ];
 
   programs.gamemode.enable = true;
@@ -524,6 +525,7 @@
     11434
     7372 # bushuray webui
     7500 # upload
+    3344
   ];
 
   networking.firewall.allowedUDPPorts = [
